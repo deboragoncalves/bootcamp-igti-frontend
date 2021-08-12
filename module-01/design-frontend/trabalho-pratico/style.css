@@ -1,6 +1,7 @@
 body {
     background-color: rgb(252, 255, 214);
     margin: 0;
+    padding: 0;
 }
 
 a {
@@ -15,7 +16,7 @@ h1 {
     text-align: center;
 }
 
-h3 {
+h2 {
     margin: 10px 0;
 }
 
@@ -44,7 +45,7 @@ h3 {
     text-align: center;
 }
 
-#origem, #principal {
+.origem, #principal {
     display: flex;
     flex-flow: row nowrap;
 }
@@ -54,13 +55,13 @@ h3 {
     margin-bottom: 10px;
 }
 
-#foto-de-bolo {
+.foto-de-bolo {
     width: 100%;
     max-width: 300px;
     max-height: 230px;
 }
 
-#foto-bolo-chocolate {
+.foto-bolo-chocolate {
     width: auto;
     max-height: 250px;
     float: left;
@@ -88,22 +89,52 @@ h3 {
     text-align: center;
 }
 
+#quote p a {
+    color: black;
+    font-weight: bold;
+}
+
 #ingredientes, .ingredientes {
     margin: 20px 10px;
 }
 
 .outros-bolos {
-    background-color: white;
+    background-color: rgb(252, 255, 214);
     margin: 10px;
     padding: 20px;
+}
+
+.bolo-chocolate {
+    justify-content: space-between;
+}
+
+.receita-bolo-chocolate ul, .outros-bolos ul {
+    list-style-type: none;
 }
 
 .contato {
     padding-bottom: 20px;
 }
 
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
 .saiba-mais {
     max-width: auto;
+}
+
+.botao-enviar {
+    background-color: none; 
+    margin: 10px 0;
+    cursor: pointer;
+} 
+
+.botao-nao-enviar {
+    background-color: none;
+    cursor: pointer;
 }
 
 #footer {
