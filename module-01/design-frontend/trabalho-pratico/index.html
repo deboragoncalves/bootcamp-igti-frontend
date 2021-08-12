@@ -3,17 +3,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="nav">
+    <nav id="nav">
         <a href="#titulo-principal">Início</a>
         <a href="#origem">A origem do bolo</a>
         <a href="#principal">Receita do bolo</a>
         <a href="#footer">Comentários</a>
-    </div>
-    <div id="main">
-        <div id="titulo-principal">
-            <h3>Conheça o bolo</h3>
-        </div>
-        <div id="origem">
+    </nav>
+    <main id="main">
+        <h3 id="titulo-principal">Conheça o bolo</h3>
+        <section id="origem">
             <img src="src/img/bolo.png" id="foto-de-bolo">
             <div class="origem-do-bolo">
                 <h2 id="origem-titulo">A origem do bolo</h2>
@@ -26,15 +24,15 @@
                 caça e maternidade. Porém a real diferença entre pães e
                 bolos só veio a ser caracterizada durante o Renascimento.</p>
             </div>
-        </div>
-        <div id="quote">
+        </section>
+        <blockquote id="quote">
             <h2>"Criar uma empresa é como fazer um bolo. Você precisa ter todos os ingredientes na proporção certa."</h2>
             <p>- Elon Musk, Citação de: <a href="https://citacoes.in/citacoes/1973351-elon-musk-criar-uma-empresa-e-como-fazer-um-bolo-voce-preci/" target="_blank">Citações</a></p>
-        </div>
+        </blockquote>
         <div id="principal">
-            <div id="bolo-chocolate">
+            <section id="bolo-chocolate">
                 <h2>Receita de Bolo de Chocolate</h2>
-                <div id="receita-bolo-chocolate">
+                <section id="receita-bolo-chocolate">
                     <img src="/src/img/bolo-chocolate.png" id="foto-bolo-chocolate"/>
                     <div id="ingredientes">
                         <p>Ingredientes:</p>
@@ -46,17 +44,17 @@
                         <p>2 colheres (sopa) de fermento</p>
                         <p>1 xícara (chá) de leite</p>
                     </div>
-                    <div class="ingredientes">
+                    <section class="ingredientes">
                         <p>Modo de preparo:</p>
                         <p>1. Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha 
                         de trigo, o açúcar e o leite, depois bata por 5 minutos.</p>
                         <p>2. Adicione o fermento e misture com uma espátula delicadamente.</p>
                         <p>3. Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido 
                         por cerca de 40 minutos.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="outros-bolos">
+                    </section>
+                </section>
+            </section>
+            <section class="outros-bolos">
                 <h2>Bolos relacionados</h2>
                 <ul>
                     <li>Bolo de Coco</li>
@@ -67,9 +65,9 @@
                     <li>Bolo de Ninho com Nutella</li>
                     <li>Bolo de Baunilha</li>
                 </ul>
-            </div>
+            </section>
         </div>
-        <div class="contato">
+        <section class="contato">
             <h1>Entre em Contato!</h1>
             <form>
                 <label>Nome: </label><input type="text"><br>
@@ -80,9 +78,9 @@
                 <button style="background-color: red; margin: 10px 0;">Enviar</button>
                 <button style="background-color: green;">Não enviar</button>
             </form>
-        </div>
-    </div>
-    <div id="footer">
+        </section>
+    </main>
+    <footer id="footer">
         <div class="social-media">
             <img src="src/img/instagram.png" class="social-icon"/>
             <img src="src/img/facebook.png" class="social-icon"/>
