@@ -26,37 +26,37 @@
             </div>
         </section>
         <blockquote id="quote">
-            <h2>"Criar uma empresa é como fazer um bolo. Você precisa ter todos os ingredientes na proporção certa."</h2>
+            <cite>"Criar uma empresa é como fazer um bolo. Você precisa ter todos os ingredientes na proporção certa."</cite>
             <p>- Elon Musk, Citação de: <a href="https://citacoes.in/citacoes/1973351-elon-musk-criar-uma-empresa-e-como-fazer-um-bolo-voce-preci/" target="_blank">Citações</a></p>
         </blockquote>
         <div id="principal">
             <section id="bolo-chocolate">
                 <h2>Receita de Bolo de Chocolate</h2>
                 <section id="receita-bolo-chocolate">
-                    <img src="/src/img/bolo-chocolate.png" id="foto-bolo-chocolate"/>
-                    <div id="ingredientes">
-                        <p>Ingredientes:</p>
-                        <p>4 ovos</p>
-                        <p>4 colheres (sopa) de chocolate em pó</p>
-                        <p>2 colheres (sopa) de manteiga</p>
-                        <p>3 xícaras (chá) de farinha de trigo</p>
-                        <p>2 xícaras (chá) de açúcar</p>
-                        <p>2 colheres (sopa) de fermento</p>
-                        <p>1 xícara (chá) de leite</p>
-                    </div>
-                    <section class="ingredientes">
-                        <p>Modo de preparo:</p>
-                        <p>1. Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha 
-                        de trigo, o açúcar e o leite, depois bata por 5 minutos.</p>
-                        <p>2. Adicione o fermento e misture com uma espátula delicadamente.</p>
-                        <p>3. Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido 
-                        por cerca de 40 minutos.</p>
-                    </section>
+                    <img src="src/img/bolo-chocolate.png" id="foto-bolo-chocolate"/>
+                    <ul id="ingredientes">
+                        <li>Ingredientes:</li>
+                        <li>4 ovos</li>
+                        <li>4 colheres (sopa) de chocolate em pó</li>
+                        <li>2 colheres (sopa) de manteiga</li>
+                        <li>3 xícaras (chá) de farinha de trigo</li>
+                        <li>2 xícaras (chá) de açúcar</li>
+                        <li>2 colheres (sopa) de fermento</li>
+                        <li>1 xícara (chá) de leite</li>
+                    </ul>
+                    <ol class="ingredientes">
+                        <li>Modo de preparo:</li>
+                        <li>1. Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha 
+                        de trigo, o açúcar e o leite, depois bata por 5 minutos.</li>
+                        <li>2. Adicione o fermento e misture com uma espátula delicadamente.</li>
+                        <li>3. Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido 
+                        por cerca de 40 minutos.</li>
+                    </ol>
                 </section>
             </section>
             <section class="outros-bolos">
                 <h2>Bolos relacionados</h2>
-                <ul>
+                <ul class="bolos-relacionados">
                     <li>Bolo de Coco</li>
                     <li>Bolo de Morango</li>
                     <li>Bolo de Milho</li>
@@ -70,11 +70,11 @@
         <section class="contato">
             <h1>Entre em Contato!</h1>
             <form>
-                <label>Nome: </label><input type="text"><br>
-                <label>Sobrenome: </label><input type="text"><br>
-                <label>Telefone: </label><input type="text"><br>
-                <label>Email: </label><input type="text"><br>
-                <label>Mensagem: </label><input type="text"><br>
+                <label for="nome">Nome: </label><input id="nome" type="text"><br>
+                <label for="sobrenome">Sobrenome: </label><input for="sobrenome" type="text"><br>
+                <label for="telefone">Telefone: </label><input for="telefone" type="text"><br>
+                <label for="email">Email: </label><input id="email" type="text"><br>
+                <label for="mensagem">Mensagem: </label><input id="mensagem" type="text"><br>
                 <button style="background-color: red; margin: 10px 0;">Enviar</button>
                 <button style="background-color: green;">Não enviar</button>
             </form>
@@ -82,10 +82,10 @@
     </main>
     <footer id="footer">
         <div class="social-media">
-            <img src="src/img/instagram.png" class="social-icon"/>
-            <img src="src/img/facebook.png" class="social-icon"/>
-            <img src="src/img/twitter.png" class="social-icon"/>
-            <img src="src/img/wordpress.png" class="social-icon"/>
+            <a href="https://instagram.com"><img src="src/img/instagram.png" class="social-icon"/></a>
+            <a href="https://facebook.com"><img src="src/img/facebook.png" class="social-icon"/></a>
+            <a href="https://twitter.com"><img src="src/img/twitter.png" class="social-icon"/></a>
+            <a href="https://wordpress.com"><img src="src/img/wordpress.png" class="social-icon"/></a>
         </div>
         <div class="copyrights">
             <p>Bolo 2021 @ Todos os direitos reservados</p>
