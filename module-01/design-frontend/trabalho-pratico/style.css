@@ -46,39 +46,30 @@ img {
     margin: 0 auto;
 }
 
-#titulo-principal {
+#main__title {
     text-align: center;
 }
 
-#origem, #principal {
+#main__section, #principal {
     display: flex;
     flex-flow: row nowrap;
 }
 
-#principal {
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.foto-de-bolo {
+.main__img {
     width: 100%;
     max-width: 300px;
     max-height: 230px;
 }
 
-.foto-bolo-chocolate {
+.chocolat-cake__img {
     width: auto;
     max-height: 250px;
     float: left;
     margin-right: 20px;
 }
 
-.origem-do-bolo {
+.main__section-cake {
     padding: 30px;
-}
-
-.sobre {
-    padding: auto;
 }
 
 #quote {
@@ -89,61 +80,57 @@ img {
     text-align: center;
 }
 
-#ingredientes {
-    margin: 20px 10px;
-}
-
-.ingredientes {
+.chocolat-cake__make {
     display: flex;
     flex-direction: column;
 }
 
-.ingredientes ul {
+.chocolat-cake__make ul {
     margin-left: -20px;
 }
 
-.outros-bolos {
+.cakes__section {
     margin-left: 80px;
 }
 
-.outros-bolos li {
+.cakes__section li {
     margin-left: -35px;
 }
 
-#bolo-chocolate {
+#chocolat-cake {
     justify-content: space-between;
 }
 
-#bolo-chocolate h2 {
+#chocolat-cake h2 {
     text-align: center;
 }
 
-.receita-bolo-chocolate {
+.chocolat-cake__section-make {
     display: flex;
     align-items: center;
 }
 
-.receita-bolo-chocolate ul, .outros-bolos ul {
+.chocolat-cake__section-make ul, .cakes__section ul {
     list-style-type: none;
 }
 
-.contato {
+.contact {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.form-contato {
+.contact__form {
     display: flex;
     flex-direction: column;
     width: 30%;
 }
 
-.form-contato input {
+.contact__form input {
     height: 20px;
 }
 
-.form-contato label, .form-contato input {
+.contact__form label, .contact__form input {
     margin: 5px 0;
 }
 
@@ -151,12 +138,12 @@ img {
     max-width: auto;
 }
 
-.botao {
+.contact__button {
     display: flex;
     justify-content: flex-end;
 }
 
-.botao-enviar {
+.contact__button-send {
     margin: 25px 0;
     cursor: pointer;
     text-transform: capitalize;
@@ -169,7 +156,7 @@ img {
     border-radius: 5%;
 }
 
-.botao-enviar:hover {
+.contact__button-send:hover {
     opacity: 0.8;
 }
 
@@ -183,23 +170,23 @@ img {
     align-items: center;
 }
 
-.social-icon {
+.footer__social-icon {
     max-width: 40px;
     max-height: 40px;
     padding: 5px;
 }
 
-.social-icon:hover {
+.footer__social-icon:hover {
     cursor: pointer;
 }
 
 @media (max-width: 750px) {
-    .receita-bolo-chocolate, #origem {
+    .chocolat-cake__section-make, #main__section {
         display: flex;
         flex-direction: column;
     }
 
-    #origem {
+    #main__section {
         align-items: center;
     }
 }

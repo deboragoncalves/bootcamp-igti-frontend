@@ -8,18 +8,18 @@
 </head>
 <body>
     <nav id="nav">
-        <a href="#titulo-principal">Início</a>
-        <a href="#origem">A origem do bolo</a>
-        <a href="#bolo-chocolate">Receita do bolo</a>
+        <a href="#main__title">Início</a>
+        <a href="#main__section">A origem do bolo</a>
+        <a href="#chocolat__cake">Receita do bolo</a>
         <a href="#footer">Contato</a>
     </nav>
     <main id="main">
-        <h1 id="titulo-principal">Conheça o bolo</h1>
-        <section id="origem">
-            <img src="src/img/bolo.png" alt="bolo" class="foto-de-bolo">
-            <section class="origem-do-bolo">
-                <h2 class="origem-titulo">A origem do bolo</h2>
-                <p class="origem-descricao">Acredita-se que a origem dos bolos tenha
+        <h1 id="main__title">Conheça o bolo</h1>
+        <section id="main__section">
+            <img src="src/img/bolo.png" alt="bolo" class="main__img">
+            <section class="main__section-cake">
+                <h2 class="main__title-cake">A origem do bolo</h2>
+                <p class="main__text-cake">Acredita-se que a origem dos bolos tenha
                     sido no Egito Antigo na forma de pães adoçados com xarope de
                     frutas, tâmaras e passas. Os gregos e romanos o
                     aperfeiçoaram onde eram oferecidos um preparado redondo
@@ -35,11 +35,11 @@
                 <p>Elon Musk</p>
             </cite>
         </blockquote>
-        <section id="bolo-chocolate">
+        <section id="chocolat-cake">
             <h2>Receita de Bolo de Chocolate</h2>
-            <section class="receita-bolo-chocolate">
-                <img src="src/img/bolo-chocolate.png" alt="bolo-chocolate" class="foto-bolo-chocolate" />
-                <div class="ingredientes">
+            <section class="chocolat-cake__section-make">
+                <img src="src/img/bolo-chocolate.png" alt="bolo-chocolate" class="chocolat-cake__img" />
+                <div class="chocolat-cake__make">
                     <ul>
                         <li>Ingredientes:</li>
                         <li>4 ovos</li>
@@ -61,9 +61,9 @@
                 </div>
             </section>
         </section>
-        <section class="outros-bolos">
+        <section class="cakes__section">
             <h2>Bolos relacionados</h2>
-            <ul class="bolos-relacionados">
+            <ul class="cakes__list">
                 <li>Bolo de Coco</li>
                 <li>Bolo de Morango</li>
                 <li>Bolo de Milho</li>
@@ -74,27 +74,32 @@
             </ul>
         </section>
         </div>
-        <section class="contato">
+        <section class="contact">
             <h2>Contato</h2>
-            <form class="form-contato">
-                <label for="nome">Nome: </label><input id="nome" type="text">
-                <label for="sobrenome">Sobrenome: </label><input id="sobrenome" type="text">
-                <label for="telefone">Telefone: </label><input id="telefone" type="text">
-                <label for="email">Email: </label><input id="email" type="text">
-                <label for="mensagem">Mensagem: </label><textarea id="mensagem" type="text"></textarea>
-                <div class="botao">
-                    <button tabindex="0" title="Enviar" class="botao-enviar">Enviar</button>
+            <form class="contact__form">
+                <label for="nome">Nome: </label>
+                <input id="nome" type="text">
+                <label for="sobrenome">Sobrenome: </label>
+                <input id="sobrenome" type="text">
+                <label for="telefone">Telefone: </label>
+                <input id="telefone" type="text">
+                <label for="email">Email: </label>
+                <input id="email" type="text">
+                <label for="mensagem">Mensagem: </label>
+                <textarea id="mensagem" type="text"></textarea>
+                <div class="contact__button">
+                    <button tabindex="0" title="Enviar" class="contact__button-send">Enviar</button>
                 </div>
             </form>
         </section>
     </main>
     <footer id="footer">
-        <div class="social-media">
-            <a href="https://instagram.com"><img alt="instagram" title="Instagram - Receitas Bolo" src="src/img/instagram.png" class="social-icon" /></a>
-            <a href="https://facebook.com"><img alt="facebook" title="Facebook - Receitas Bolo" src="src/img/facebook.png" class="social-icon" /></a>
-            <a href="https://twitter.com"><img alt="twitter" title="Twitter - Receitas Bolo" src="src/img/twitter.png" class="social-icon" /></a>
-            <a href="https://wordpress.com"><img alt="wordpress" title="Wordpress - Receitas Bolo" src="src/img/wordpress.png" class="social-icon" /></a>        </div>
-        <div class="copyrights">
+        <div class="footer__social-media">
+            <a href="https://instagram.com"><img alt="instagram" title="Instagram - Receitas Bolo" src="src/img/instagram.png" class="footer__social-icon" /></a>
+            <a href="https://facebook.com"><img alt="facebook" title="Facebook - Receitas Bolo" src="src/img/facebook.png" class="footer__social-icon" /></a>
+            <a href="https://twitter.com"><img alt="twitter" title="Twitter - Receitas Bolo" src="src/img/twitter.png" class="footer__social-icon" /></a>
+            <a href="https://wordpress.com"><img alt="wordpress" title="Wordpress - Receitas Bolo" src="src/img/wordpress.png" class="footer__social-icon" /></a>        </div>
+        <div class="footer__copyrights">
             <p>Bolo 2021 @ Todos os direitos reservados</p>
         </div>
     </footer>
