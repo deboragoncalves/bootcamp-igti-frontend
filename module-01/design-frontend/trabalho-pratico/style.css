@@ -2,6 +2,7 @@ body {
     background-color: rgb(252, 255, 214);
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -18,6 +19,10 @@ h1 {
 
 h2 {
     margin: 10px 0;
+}
+
+img {
+    border-radius: 5%;
 }
 
 #nav {   
@@ -45,7 +50,7 @@ h2 {
     text-align: center;
 }
 
-.origem, #principal {
+#origem, #principal {
     display: flex;
     flex-flow: row nowrap;
 }
@@ -69,7 +74,6 @@ h2 {
 }
 
 .origem-do-bolo {
-    background-color: white;
     padding: 30px;
 }
 
@@ -78,34 +82,45 @@ h2 {
 }
 
 #quote {
-    background-image: url(/src/img/sweet-cake.jpg);
-    background-position: right center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    background-color: rgb(128, 0, 0);
+    background-color: rgb(255, 99, 71);
     color: white;
     padding: 20px;
     margin-top: 10px;
     text-align: center;
 }
 
-#quote p a {
-    color: black;
-    font-weight: bold;
-}
-
-#ingredientes, .ingredientes {
+#ingredientes {
     margin: 20px 10px;
 }
 
-.outros-bolos {
-    background-color: rgb(252, 255, 214);
-    margin: 10px;
-    padding: 20px;
+.ingredientes {
+    display: flex;
+    flex-direction: column;
 }
 
-.bolo-chocolate {
+.ingredientes ul {
+    margin-left: -20px;
+}
+
+.outros-bolos {
+    margin-left: 80px;
+}
+
+.outros-bolos li {
+    margin-left: -35px;
+}
+
+#bolo-chocolate {
     justify-content: space-between;
+}
+
+#bolo-chocolate h2 {
+    text-align: center;
+}
+
+.receita-bolo-chocolate {
+    display: flex;
+    align-items: center;
 }
 
 .receita-bolo-chocolate ul, .outros-bolos ul {
@@ -113,28 +128,49 @@ h2 {
 }
 
 .contato {
-    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form-contato {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 30%;
+}
+
+.form-contato input {
+    height: 20px;
+}
+
+.form-contato label, .form-contato input {
+    margin: 5px 0;
 }
 
 .saiba-mais {
     max-width: auto;
 }
 
-.botao-enviar {
-    background-color: none; 
-    margin: 10px 0;
-    cursor: pointer;
-} 
+.botao {
+    display: flex;
+    justify-content: flex-end;
+}
 
-.botao-nao-enviar {
-    background-color: none;
+.botao-enviar {
+    margin: 25px 0;
     cursor: pointer;
+    text-transform: capitalize;
+    font-size: 15px;
+    width: 100px;
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5%;
+}
+
+.botao-enviar:hover {
+    opacity: 0.8;
 }
 
 #footer {
@@ -155,4 +191,22 @@ h2 {
 
 .social-icon:hover {
     cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    .receita-bolo-chocolate, #origem {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #origem {
+        align-items: center;
+    }
+}
+
+@media (max-width: 680px) {
+    #footer {
+        display: flex;
+        flex-direction: column;
+    }
 }
