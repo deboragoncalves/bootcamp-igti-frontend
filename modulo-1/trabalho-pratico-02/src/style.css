@@ -1,0 +1,19 @@
+#header {
+    background-color: #808080;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: white !important;
+}
+
+.btn-color {
+    background-color: #c71585 !important;
+    color: white !important;
+}
+    
+
