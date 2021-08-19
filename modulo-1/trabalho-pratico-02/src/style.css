@@ -26,7 +26,6 @@
 
 .img-carousel {
     height: auto;
-    background-image: linear-gradient(red, yellow, blue) !important;
 }
 
 .message-healthy-body {
@@ -129,3 +128,5 @@
 .btn-plan {
     margin-top: 15px;
 }
+
+/* TODO: Responsivo */
