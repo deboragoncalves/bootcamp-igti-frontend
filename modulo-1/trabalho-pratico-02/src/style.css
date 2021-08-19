@@ -44,5 +44,28 @@
 .message-healthy-body h2, .message-healthy-body p {
     color: white;
 }
-    
+
+#training {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.training-card {
+    width: 18rem;
+    padding: 0 10px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    border: none !important;
+}
+
+.img-training {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+/* TODO: Alinhar botão card */
 
