@@ -1,3 +1,5 @@
+/* TODO: Mudar para SASS */
+
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +47,7 @@
     color: white;
 }
 
-#training {
+.card-section {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -87,4 +89,43 @@
     position: absolute;
     color: white;
     font-size: 30px;
+}
+
+#plans {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.card-plan {
+    margin: 0 10px;
+    width: 300px;
+    height: auto;
+}
+
+.card-body-plan {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.card-header-title {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.card-title {
+    font-size: 26px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.card-text-plan {
+    width: 250px;
+    height: auto;
+    margin: 3.5px 0;
+}
+
+.btn-plan {
+    margin-top: 15px;
 }

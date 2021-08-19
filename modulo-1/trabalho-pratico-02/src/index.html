@@ -40,11 +40,11 @@
         <section id="carousel">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                    <button type="button" tabindex="0" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                         class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    <button type="button" tabindex="0" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    <button type="button" tabindex="0" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
@@ -58,24 +58,25 @@
                         <button type="button" tabindex="0" class="btn btn-color">Saiba mais</button>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                <button class="carousel-control-prev" tabindex="0" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                <button class="carousel-control-next" tabindex="0" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
         </section>
-        <section id="training">
+        <section class="card-section">
             <div class="card training-card">
                 <img src="../img/treinamento-funcional.jpg" class="img-training" alt="Treinamento funcional">
                 <div class="card-body">
                     <h5 class="card-title">Treinamento Funcional</h5>
-                    <p class="card-text">O treinamento funcional baseia-se no movimento natural do ser humano como correr, pular e empurrar.</p>
+                    <p class="card-text">O treinamento funcional baseia-se no movimento natural do ser humano como
+                        correr, pular e empurrar.</p>
                     <a href="#" class="btn">Saiba mais >></a>
                 </div>
             </div>
@@ -83,7 +84,8 @@
                 <img src="../img/treinador.jpg" class="img-training" alt="Treino físico">
                 <div class="card-body">
                     <h5 class="card-title">Treino Físico</h5>
-                    <p class="card-text">Treinamento de cada grupo muscular, 2x na semana, usando aparelhos de academia.</p>
+                    <p class="card-text">Treinamento de cada grupo muscular, 2x na semana, usando aparelhos de academia.
+                    </p>
                     <a href="#" class="btn">Saiba mais >></a>
                 </div>
             </div>
@@ -91,20 +93,67 @@
                 <img src="../img/posicao-ioga.jpg" class="img-training" alt="Ioga">
                 <div class="card-body">
                     <h5 class="card-title">Ioga</h5>
-                    <p class="card-text">É um conceito que se refere às tradicionais disciplinas físicas e mentais originárias da Índia.</p>
+                    <p class="card-text">É um conceito que se refere às tradicionais disciplinas físicas e mentais
+                        originárias da Índia.</p>
                     <a href="#" class="btn">Saiba mais >></a>
                 </div>
             </div>
         </section>
         <section class="training-message">
-            <!-- Ajustar imagem -->
-            <img src="../img/trilha2.jpg" alt="Trilha"> 
+            <!-- TODO: Ajustar imagem -->
+            <img src="../img/trilha2.jpg" alt="Trilha">
             <blockquote class="quote">
                 <cite>
                     <p>"Uma hora antes da academia: cansaço e vontade de ficar em casa.</p>
                     <p>Uma hora depois da academia: aquele sentimento de dever cumprido."</p>
                 </cite>
             </blockquote>
+        </section>
+        <section id="plans">
+            <h2>Conheça nossos planos</h2>
+            <div class="card-section">
+                <!-- TODO: Ajustar altura cards -->
+                <div class="card card-plan">
+                    <div class="card-header card-header-title">
+                        Básico
+                    </div>
+                    <div class="card-body card-body-plan">
+                        <p class="card-title"><span class="price">R$50</span>/mês</p>
+                        <p class="card-text card-text-plan">Treino 2 dias da semana</p>
+                        <p class="card-text card-text-plan">Acompanhamento de personal trainer</p>
+                        <p class="card-text card-text-plan">Aulas de spinning inclusas</p>
+                        <p class="card-text card-text-plan">Teste físico gratuito</p>
+                        <a href="#" class="btn btn-color btn-plan">Contrate este plano</a>
+                    </div>
+                </div>
+                <div class="card card-plan">
+                    <div class="card-header card-header-title">
+                        Pro
+                    </div>
+                    <div class="card-body card-body-plan">
+                        <p class="card-title"><span class="price">R$80</span>/mês</p>
+                        <p class="card-text card-text-plan">Treino 4 dias da semana</p>
+                        <p class="card-text card-text-plan">Acompanhamento de personal trainer e nutricionista</p>
+                        <p class="card-text card-text-plan">Aulas de spinning e ioga inclusas</p>
+                        <p class="card-text card-text-plan">Teste físico gratuito</p>
+                        <a href="#" class="btn btn-color btn-plan">Contrate este plano</a>
+                    </div>
+                </div>
+                <div class="card card-play">
+                    <div class="card-header card-header-title">
+                        Enterprise
+                    </div>
+                    <div class="card-body card-body-plan">
+                        <p class="card-title"><span class="price">R$130</span>/mês</p>
+                        <p class="card-text card-text-plan">Treino 7 dias da semana</p>
+                        <p class="card-text card-text-plan">Acompanhamento de personal trainer, nutricionista e psicóloga</p>
+                        <p class="card-text card-text-plan">Aulas de spinning, ioga e zumba inclusas</p>
+                        <p class="card-text card-text-plan">Treinamento funcional e cross fit</p>
+                        <p class="card-text card-text-plan">Teste físico gratuito</p>
+                        <a href="#" class="btn btn-color btn-plan">Contrate este plano</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
