@@ -20,8 +20,12 @@
 }
 
 .btn-color {
-    background-color: #c71585 !important;
+    background-color: #d52856 !important;
     color: white !important;
+}
+
+.btn-color:hover {
+    background-color: #b52249 !important;
 }
 
 .img-carousel {
