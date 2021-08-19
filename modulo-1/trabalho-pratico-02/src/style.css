@@ -28,6 +28,14 @@
     background-color: #b52249 !important;
 }
 
+#contact {
+    padding: 30px 150px;
+}
+
+#contact h2 {
+    text-align: center;
+}
+
 .img-carousel {
     height: auto;
 }
