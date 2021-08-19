@@ -1,11 +1,11 @@
-#header {
-    background-color: #808080;
-}
-
 * {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header {
+    background-color: #808080;
 }
 
 .logo {
@@ -69,3 +69,22 @@
 
 /* TODO: Alinhar botão card */
 
+.training-message {
+    height: auto;
+    position: relative;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.training-message img {
+    opacity: 0.8;
+}
+
+.quote {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+}
