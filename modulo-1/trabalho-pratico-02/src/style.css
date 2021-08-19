@@ -2,6 +2,12 @@
     background-color: #808080;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .logo {
     width: 150px;
     height: auto;
@@ -14,6 +20,29 @@
 .btn-color {
     background-color: #c71585 !important;
     color: white !important;
+}
+
+.img-carousel {
+    height: auto;
+    background-image: linear-gradient(red, yellow, blue) !important;
+}
+
+.message-healthy-body {
+    z-index: 100;
+    position: relative;
+
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+
+    /* TODO: Ajustar */
+    margin-top: 280px;
+    margin-left: 200px;
+
+}
+
+.message-healthy-body h2, .message-healthy-body p {
+    color: white;
 }
     
 
