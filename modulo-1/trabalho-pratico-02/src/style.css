@@ -28,25 +28,7 @@
     background-color: #b52249 !important;
 }
 
-.img-carousel {
-    height: auto;
-}
-
-.message-healthy-body {
-    z-index: 100;
-    position: relative;
-
-    display: flex;
-    flex-flow: column wrap;
-    align-items: flex-start;
-
-    /* TODO: Ajustar */
-    margin-top: 280px;
-    margin-left: 200px;
-
-}
-
-.message-healthy-body h2, .message-healthy-body p {
+.carousel-item-div h2, .carousel-item-div p {
     color: white;
 }
 
@@ -70,6 +52,10 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
+}
+
+.img-training:hover {
+    width: 200px;
 }
 
 /* TODO: Alinhar botão card */
