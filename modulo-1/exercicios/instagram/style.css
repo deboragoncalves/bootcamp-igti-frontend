@@ -119,3 +119,41 @@ p {
     width: 100%;
     height: 100%;
 }
+
+.reactions {
+    display: flex;
+}
+
+.reactions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reactions-post {
+    padding: 8px 5px;
+}
+
+.reactions-post a {
+    padding: 5px 9px;
+}
+
+.bookmark {
+    padding-right: 12px;
+}
+
+.likes-post {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+}
+
+.likes-post p {
+    padding-left: 10px;
+}
+
+.like-person {
+    font-weight: 600;
+    cursor: pointer;
+}
