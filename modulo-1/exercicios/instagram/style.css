@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
 .navbar-instagram {
     padding: 0;
     margin: 0;
@@ -41,3 +46,37 @@
     height: auto;
     border-radius: 50%;
 }
+
+.main-content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    padding: 30px 0;
+}
+
+.card-stories {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.person-story {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; /* coluna */
+    align-items: center; /* linha */
+
+    padding: 10px 15px;
+}
+
+.img-stories {
+    width: 4em;
+    border: 2.5px solid #C13584;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.img-brait {
+    height: 63px;
+}
+
