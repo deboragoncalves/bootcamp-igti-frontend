@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-instagram {
+    padding: 0;
+    margin: 0;
+    height: 90px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; /* horizontal */
+}
+
+.container-nav {
+    padding: 0;
+    margin: 0;
+}
+
+.logo-instagram {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+
+    padding: 0;
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.icons a {
+    padding: 0 9px;
+}
+
+.profile-img {
+    width: 1.5em;
+    height: auto;
+    border-radius: 50%;
+}
