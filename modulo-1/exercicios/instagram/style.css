@@ -136,7 +136,8 @@ p {
 }
 
 .reactions-post a {
-    padding: 5px 9px;
+    padding: 5px 6px;
+    color: transparent;
 }
 
 .bookmark {
@@ -150,10 +151,55 @@ p {
 }
 
 .likes-post p {
-    padding-left: 10px;
+    padding-left: 15px;
+}
+
+.likes-post a {
+    padding-left: 5px;
 }
 
 .like-person {
     font-weight: 600;
     cursor: pointer;
+}
+
+.texts-post {
+    padding-left: 15px;
+}
+
+.texts-post p {
+    padding-top: 5px;
+}
+
+.text-comments {
+    color: gray;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.text-hours {
+    text-transform: uppercase;
+    color: gray;
+    font-size: 12px;
+}
+
+.comment {
+    padding-left: 5px;
+}
+
+.add-comment {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.add-comment input {
+    border: none;
+    margin: 0 5px;
+}
+
+.add-comment a {
+    text-decoration: none;
+    padding-right: 15px;
+    opacity: 0.5;
 }
