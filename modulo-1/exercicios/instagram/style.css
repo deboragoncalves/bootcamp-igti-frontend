@@ -171,15 +171,13 @@ p {
     padding-top: 5px;
 }
 
-.text-comments {
+.text-comments, .text-hours {
     color: gray;
     cursor: pointer;
     font-size: 16px;
 }
 
 .text-hours {
-    text-transform: uppercase;
-    color: gray;
     font-size: 12px;
 }
 
@@ -193,6 +191,10 @@ p {
     padding: 10px 0;
 }
 
+.add-comment svg {
+    cursor: pointer;
+}
+
 .add-comment input {
     border: none;
     margin: 0 5px;
@@ -202,4 +204,82 @@ p {
     text-decoration: none;
     padding-right: 15px;
     opacity: 0.5;
+}
+
+.follow-aside {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.header-follow {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    flex-flow: column wrap;
+
+    padding-left: 15px;
+}
+
+.name-follow {
+    font-weight: 600;
+}
+
+.username-follow {
+    color: gray;
+}
+
+.img-profile-follow {
+    width: 4em;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.follow-suggest {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 0;
+}
+
+.follow-suggest p {
+    font-weight: 600;
+}
+
+.follow-suggest p + p {
+    cursor: pointer;
+}
+
+.text-suggest {
+    color: gray;
+}
+
+.follow {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-follow {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    padding: 2px 0;
+}
+
+.profile-follow p {
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+.link-follow {
+    text-decoration: none;
+    font-weight: 600;
 }
