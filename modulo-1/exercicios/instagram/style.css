@@ -52,6 +52,7 @@ p {
     flex-flow: column wrap;
     align-items: center;
 
+    width: 75%;
     padding: 30px 0;
 }
 
@@ -101,6 +102,10 @@ p {
     cursor: pointer;
     padding-left: 12px;
     font-weight: 600;
+}
+
+.main-container {
+    display: flex;
 }
 
 .img-profile-post {
@@ -209,6 +214,10 @@ p {
 .follow-aside {
     display: flex;
     flex-flow: column wrap;
+
+    /* TODO: Ajustar */
+    margin-top: 30px;
+    margin-left: -100px;
 }
 
 .header-follow {
@@ -226,6 +235,7 @@ p {
 
 .name-follow {
     font-weight: 600;
+    cursor: pointer;
 }
 
 .username-follow {
@@ -277,6 +287,7 @@ p {
 .profile-follow p {
     padding-left: 10px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .link-follow {
