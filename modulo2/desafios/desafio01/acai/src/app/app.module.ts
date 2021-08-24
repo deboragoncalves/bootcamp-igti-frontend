@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SelectComponentComponent } from 'select-component/select-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SelectComponentComponent
   ],
   imports: [
     BrowserModule,
