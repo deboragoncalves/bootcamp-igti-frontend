@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  titleSize: string = "Tamanho";
+  titleAdd: string = "Acréscimos";
+  subtitleAdd: string = "Escolha até 3";
+
+  sizesList: Array<string> = ["300ml", "500ml"];
+  tastesList: Array<string> = ["Leite condensado", "Banana", "Granola", "Morango", "Leite em pó", "Côco", "Castanha de cajú"];  
+  
 }

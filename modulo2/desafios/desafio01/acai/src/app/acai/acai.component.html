@@ -1,0 +1,25 @@
+<main id="main">
+  <section id="sizes">
+    <p class="title">{{ titleSize }}</p>
+    <ul class="list" *ngFor="let size of sizesList">
+      <li class="item-list-size">
+        <input id="size" type="radio" />
+      </li>
+      <li class="item-list-size">
+        <label for="size">{{ size }}</label>
+      </li>
+    </ul>
+  </section>
+  <section id="tastes">
+    <p class="title">{{ titleAdd }}</p>
+    <p class="subtitle">{{ subtitleAdd }}</p>
+    <ul class="list" *ngFor="let taste of tastesList">
+      <li class="item-list-taste">
+        <input id="taste" type="checkbox" />
+      </li>
+      <li class="item-list-taste">
+        <label id="taste">{{ taste }}</label>
+      </li>
+    </ul>
+  </section>
+</main>

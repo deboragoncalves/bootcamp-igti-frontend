@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SelectComponentComponent } from 'select-component/select-component.component';
+import { AcaiComponent } from './acai/acai.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SelectComponentComponent
+    AcaiComponent
   ],
   imports: [
     BrowserModule,
