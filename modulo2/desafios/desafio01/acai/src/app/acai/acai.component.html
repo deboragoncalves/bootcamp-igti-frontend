@@ -11,8 +11,8 @@
     </ul>
   </section>
   <section id="tastes">
-    <p class="title">{{ titleAdd }}</p>
-    <p class="subtitle">{{ subtitleAdd }}{{ textInputsChecked }}</p>
+    <p class="title">{{ titleTastes }}</p>
+    <p class="subtitle">{{ subtitleTastes }}{{ textInputsChecked }}</p>
     <ul class="list" *ngFor="let taste of tastesList">
       <li class="item-list-taste">
           <input [(ngModel)]="taste.value" (change)="inputChanged($event.target.checked)" id="taste" type="checkbox"

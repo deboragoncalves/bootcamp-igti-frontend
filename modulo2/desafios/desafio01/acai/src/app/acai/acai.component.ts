@@ -8,8 +8,8 @@ import { Component, Input } from '@angular/core';
 export class AcaiComponent {
 
   @Input() titleSize: string;
-  @Input() titleAdd: string;
-  @Input() subtitleAdd: string;
+  @Input() titleTastes: string;
+  @Input() subtitleTastes: string;
 
   @Input() sizesList: Array<string> = new Array();
   @Input() tastesList: Array<string> = new Array();
