@@ -3,7 +3,7 @@
     <p class="title">{{ titleSize }}</p>
     <ul class="list" *ngFor="let size of sizesList">
       <li class="item-list-size">
-        <input id="size" type="radio" />
+        <input name="size" id="size" type="radio" />
       </li>
       <li class="item-list-size">
         <label for="size">{{ size }}</label>
@@ -12,10 +12,11 @@
   </section>
   <section id="tastes">
     <p class="title">{{ titleAdd }}</p>
-    <p class="subtitle">{{ subtitleAdd }}</p>
+    <p class="subtitle">{{ subtitleAdd }}{{ textInputsChecked }}</p>
     <ul class="list" *ngFor="let taste of tastesList">
       <li class="item-list-taste">
-        <input id="taste" type="checkbox" />
+          <input [(ngModel)]="taste.value" (change)="inputChanged($event.target.checked)" id="taste" type="checkbox"
+          [disabled]="inputsChecked >= 3" />
       </li>
       <li class="item-list-taste">
         <label id="taste">{{ taste }}</label>

@@ -13,4 +13,22 @@ export class AcaiComponent {
 
   @Input() sizesList: Array<string> = new Array();
   @Input() tastesList: Array<string> = new Array();
+
+  textInputsChecked: string = " ";
+
+  inputsChecked: number = 0;
+
+  inputChanged(checked: boolean) {
+    if (checked) {
+      this.inputsChecked++;
+    } else {
+      this.inputsChecked--;
+    }
+
+    if (this.inputsChecked == 1) {
+      this.textInputsChecked = " (" + this.inputsChecked + " selecionado)";
+    } else {
+      this.textInputsChecked = " (" + this.inputsChecked + " selecionados)";
+    }
+  }
 }
