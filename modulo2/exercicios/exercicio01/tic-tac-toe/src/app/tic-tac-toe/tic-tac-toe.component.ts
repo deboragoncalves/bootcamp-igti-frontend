@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class TicTacToeComponent {
 
+  currentPlayer: string = "X";
+  play: string[][] = [
+    ["X", "X", "X"],
+    ["", "", ""],
+    ["", "", ""]
+  ];
+  endPlay: boolean;
+
+  playTicTac(row: number, column: number): void {
+    console.log(row);
+    console.log(column);
+  }
 }

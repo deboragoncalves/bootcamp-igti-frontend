@@ -12,24 +12,24 @@
   <main id="main">
     <h1>Tic tac toe</h1>
     <section id="game-tic-tac">
-      <p class="player">Jogador atual: X</p>
+      <p class="player">Jogador atual: {{ currentPlayer }}</p>
       <p class="winner">Vencedor: </p>
       <button class="restart-btn" type="button">Reiniciar o jogo</button>
       <table class="table-game">
         <tr>
-          <td class="column-game">X</td>
-          <td class="column-game"></td>
-          <td class="column-game"></td>
+          <td class="column-game" (click)="playTicTac(0, 0)">{{ play[0][0] }}</td>
+          <td class="column-game" (click)="playTicTac(0, 1)">{{ play[0][1] }}</td>
+          <td class="column-game" (click)="playTicTac(0, 2)">{{ play[0][2] }}</td>
         </tr>
         <tr>
-          <td class="column-game"></td>
-          <td class="column-game">O</td>
-          <td class="column-game">X</td>
+          <td class="column-game" (click)="playTicTac(1, 0)">{{ play[1][0] }}</td>
+          <td class="column-game" (click)="playTicTac(1, 1)">{{ play[1][1] }}</td>
+          <td class="column-game" (click)="playTicTac(1, 2)">{{ play[1][2] }}</td>
         </tr>
         <tr>
-          <td class="column-game"></td>
-          <td class="column-game"></td>
-          <td class="column-game"></td>
+          <td class="column-game" (click)="playTicTac(2, 0)">{{ play[2][0] }}</td>
+          <td class="column-game" (click)="playTicTac(2, 1)">{{ play[2][1] }}</td>
+          <td class="column-game" (click)="playTicTac(2, 2)">{{ play[2][2] }}</td>
         </tr>
       </table>
     </section>
