@@ -13,8 +13,8 @@
     <h1>Tic tac toe</h1>
     <section id="game-tic-tac">
       <p class="player">Jogador atual: {{ currentPlayer }}</p>
-      <p class="winner">Vencedor: </p>
-      <button class="restart-btn" type="button">Reiniciar o jogo</button>
+      <p class="winner">Vencedor: {{ winner }} </p>
+      <button class="restart-btn" (click)="restartPlay()" type="button">Reiniciar o jogo</button>
       <table class="table-game">
         <tr>
           <td class="column-game" (click)="playTicTac(0, 0)">{{ play[0][0] }}</td>
