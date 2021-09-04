@@ -1,0 +1,31 @@
+<form [formGroup]="formNewExercise">
+  <div class="input">
+    <label for="name">Nome do exercício</label>
+    <input type="text" id="name" formControlName="name" [(ngModel)]="name" placeholder="Nome do exercício">
+  </div>
+  <div class="input">
+    <label for="duration">Tempo de duração</label>
+    <input type="number" id="duration" formControlName="duration" [(ngModel)]="duration" placeholder="Duração">
+  </div>
+  <div class="input">
+    <label for="repetion">Número de repetições</label>
+    <input type="number" id="repetion" formControlName="repetition" [(ngModel)]="repetition" placeholder="Repetições">
+  </div>
+  <div class="input">
+    <label for="preparation">Preparação</label>
+    <input type="number" id="preparation" formControlName="preparation" [(ngModel)]="preparation" placeholder="Preparação">
+  </div>
+  <div class="input">
+    <label for="resting">Tempo de descanso</label>
+    <input type="number" id="resting" formControlName="resting" [(ngModel)]="resting" placeholder="Descanso">
+  </div>
+  <button type="button" (click)="addExercise()">Adicionar exercício</button>
+</form>
+
+<ul *ngFor="let exercise of exercises">
+  <li>Nome: {{ exercise.name }}</li>
+  <li>Duração: {{ exercise.duration }}</li>
+  <li>Descanso: {{ exercise.resting }}</li>
+  <li>Repetição: {{ exercise.repetition }}</li>
+  <li>Preparação: {{ exercise.preparation }}</li>
+</ul>
