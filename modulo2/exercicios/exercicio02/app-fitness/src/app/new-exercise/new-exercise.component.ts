@@ -39,4 +39,8 @@ export class NewExerciseComponent {
     this.exercises.push(this.exercise);  
   }
 
+  deleteExercise(index: number) {
+    this.exercises.splice(index, 1);
+  }
+
 }
