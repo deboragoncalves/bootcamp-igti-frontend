@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'app/data-service.service';
 import { Exercise } from './exercise';
 
 @Component({
@@ -8,8 +9,10 @@ import { Exercise } from './exercise';
   styleUrls: ['./new-exercise.component.css']
 })
 export class NewExerciseComponent {
+
+  constructor(private dataService: DataService) {}
   
-  exercise: Exercise;
+  @Input() exercise: Exercise;
   exercises: Exercise[] = [];
 
   name: string;
@@ -26,7 +29,7 @@ export class NewExerciseComponent {
     resting: new FormControl("", Validators.required)
   })  
 
-  addExercise() {
+  addExercise(): void {
 
     this.exercise = {
       name: this.name,
@@ -36,11 +39,18 @@ export class NewExerciseComponent {
       resting: this.resting
     }
 
-    this.exercises.push(this.exercise);  
+    this.exercises.push(this.exercise);
+    
+    // Enviar array para service
+
+    this.dataService.setData(this.exercises);
   }
 
-  deleteExercise(index: number) {
+  deleteExercise(index: number): void {
     this.exercises.splice(index, 1);
-  }
 
+    // Enviar array para service
+
+    this.dataService.setData(this.exercises);
+  }
 }

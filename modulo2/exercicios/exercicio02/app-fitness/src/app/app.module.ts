@@ -6,11 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NewExerciseComponent } from './new-exercise/new-exercise.component';
+import { TimerComponent } from './timer/timer.component';
+import { DataService } from './data-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewExerciseComponent
+    NewExerciseComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,7 @@ import { NewExerciseComponent } from './new-exercise/new-exercise.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
