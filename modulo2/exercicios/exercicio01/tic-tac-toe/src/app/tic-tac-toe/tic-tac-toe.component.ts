@@ -30,7 +30,7 @@ export class TicTacToeComponent {
     this.changeCurrentPlayer();
     this.checkWinner();
 
-    if (this.checkWinner() == true) {
+    if (this.checkWinner()) {
       this.winner = this.currentPlayer;
     }
   }
@@ -83,7 +83,7 @@ export class TicTacToeComponent {
       return true;
     }
 
-    // TODO: correção, winner após próxima jogada
+    // TODO: correção, mostrar winner 
 
   }
 }
