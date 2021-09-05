@@ -1,12 +1,13 @@
 <section *ngIf="exercises">
+  <p>Cronômetro: {{ formatTime() }}<span *ngIf="time">s</span></p>
   <p>Total de exercícios: {{ totalExercises }}</p>
   <p>Exercício - {{ exerciseName }}: {{ indexCurrentExercise }} de {{ totalExercises }}</p>
   <p>Repetições: {{ currentRepetition }} de {{ totalRepetitions }}</p>
   <p>Fase: {{ showStateExercise() }}</p>
-  <button type="button">Iniciar</button>
+  <button type="button" (click)="start()">Iniciar</button>
   <button type="button" (click)="stop()">Pausar</button>
   <button type="button" (click)="restart()">Reiniciar</button>
   <button type="button" (click)="next()">Próximo</button>
 </section>
 
-<p *ngIf="!exercises">Não existem exercícios. Faça o cadastro!</p>
+<p *ngIf="!exercises">Não existem exercícios. <span routerLink="/new-exercise">Clique aqui</span> e faça o cadastro!</p>

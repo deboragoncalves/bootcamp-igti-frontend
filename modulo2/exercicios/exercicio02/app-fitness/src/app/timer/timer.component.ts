@@ -22,6 +22,9 @@ export class TimerComponent implements OnInit {
 
   stateExercise: number = 0;
 
+  interval: any;
+  time: number;
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
@@ -42,6 +45,8 @@ export class TimerComponent implements OnInit {
     this.currentRepetition++;
     this.indexCurrentExercise++;
 
+    this.time = this.currentExercise.preparation;
+
     this.showStateExercise();
   }
 
@@ -59,7 +64,9 @@ export class TimerComponent implements OnInit {
   }
 
   stop(): void {
-    // TODO
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
   }
 
   restart(): void {
@@ -68,9 +75,31 @@ export class TimerComponent implements OnInit {
     this.stateExercise = 0;
   }
 
+  start(): void {
+    if (!this.interval) {
+      this.interval = setInterval(() => {
+          if (this.time > 0) {
+            this.time--;          
+          } else {
+            // Prox exercício
+            this.next();
+          }
+      }, 1000);
+    } else {
+      // TODO: Reiniciar após pausa
+    }
+  }
+
+  formatTime(): string {
+    if (this.time) {
+      return this.time.toString();
+    }
+  }
+
   next(): void {
     if (this.stateExercise == 0 || this.stateExercise == 1) {
       this.stateExercise++;
+      this.getTimeState();
     } else if (this.stateExercise == 2) {
       // Se exercício atual acabou
 
@@ -78,18 +107,31 @@ export class TimerComponent implements OnInit {
         // Todos
 
         if (this.exercises.length - 1 == this.indexCurrentExercise) {
-          console.log("finish");
+          return;
         }
 
       } else if (this.currentRepetition < this.totalRepetitions){
-        // Próximo repetição
+        // Próxima repetição
 
         this.stateExercise = 0;
+        this.getTimeState();
         this.currentRepetition++;
       }
 
-      // TODO: Criar service para exibir dados - refresh
     }
 
   }
+
+  getTimeState(): void {
+    if (this.stateExercise == 0) {
+      this.time = this.currentExercise.preparation;
+    } else if (this.stateExercise == 1) {
+      this.time = this.currentExercise.duration;
+    } else if (this.stateExercise == 2) {
+      this.time = this.currentExercise.resting;
+    }
+  }
+
+  // TODO: Criar service para exibir dados - refresh
+
 }

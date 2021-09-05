@@ -1,6 +1,7 @@
 export class Exercise {
     name: string;
+    preparation: number;
     duration: number;
-    repetition: number;
     resting: number;
+    repetition: number;
 }

@@ -16,24 +16,27 @@ export class NewExerciseComponent {
   exercises: Exercise[] = [];
 
   name: string;
+  preparation: number;
   duration: number;
-  repetition: number;
   resting: number;
+  repetition: number;
 
   formNewExercise: FormGroup = new FormGroup({
     name: new FormControl("", Validators.required),
+    preparation: new FormControl("", Validators.required),
     duration: new FormControl("", Validators.required),
-    repetition: new FormControl("", Validators.required),
-    resting: new FormControl("", Validators.required)
+    resting: new FormControl("", Validators.required),
+    repetition: new FormControl("", Validators.required)
   })  
 
   addExercise(): void {
 
     this.exercise = {
       name: this.name,
+      preparation: this.preparation,
       duration: this.duration,
-      repetition: this.repetition,
-      resting: this.resting
+      resting: this.resting,
+      repetition: this.repetition
     }
 
     this.exercises.push(this.exercise);
