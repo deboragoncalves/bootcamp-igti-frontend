@@ -1,0 +1,29 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Contact } from './contact';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ContactService {
+
+  baseUrl: string = "http://localhost:3000/";
+
+  constructor(private httpClient: HttpClient) { }
+
+  getContacts() {
+    return this.httpClient.get<Contact[]>(this.baseUrl + "contacts");
+  }
+
+  createContact(contact: Contact) {
+    return this.httpClient.post<Contact>(this.baseUrl + "contacts", contact);
+  }
+
+  updateContact(contact: Contact) {
+    return this.httpClient.put<Contact>(this.baseUrl + "contacts/" + contact.id, contact);
+  }
+
+  deleteContact(id: number): void {
+    this.httpClient.delete(this.baseUrl + "contacts/" + id);
+  }
+}
