@@ -1,0 +1,24 @@
+{
+    "contacts": [
+        {
+            "id": 0,
+            "name": "Carolina",
+            "phone": "(47) 99432-1234"
+        },
+        {
+            "id": 1,
+            "name": "Clevenilson",
+            "phone": "(41) 99812-9321"
+        },
+        {
+            "id": 2,
+            "name": "Adilson",
+            "phone": "(51) 99543-9871"
+        },
+        {
+            "id": 3,
+            "name": "Roberta",
+            "phone": "(49) 99123-3234"
+        }
+    ]
+}
