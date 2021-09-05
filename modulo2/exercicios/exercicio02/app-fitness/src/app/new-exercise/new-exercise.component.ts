@@ -31,15 +31,7 @@ export class NewExerciseComponent {
 
   addExercise(): void {
 
-    this.exercise = {
-      name: this.name,
-      preparation: this.preparation,
-      duration: this.duration,
-      resting: this.resting,
-      repetition: this.repetition
-    }
-
-    this.exercises.push(this.exercise);
+    this.exercises.push(this.formNewExercise.value);
     
     // Enviar array para service
 

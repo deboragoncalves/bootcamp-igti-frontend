@@ -90,12 +90,6 @@ export class TimerComponent implements OnInit {
     }
   }
 
-  formatTime(): string {
-    if (this.time) {
-      return this.time.toString();
-    }
-  }
-
   next(): void {
     if (this.stateExercise == 0 || this.stateExercise == 1) {
       this.stateExercise++;

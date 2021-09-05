@@ -1,5 +1,5 @@
 <section *ngIf="exercises">
-  <p>Cronômetro: {{ formatTime() }}<span *ngIf="time">s</span></p>
+  <p>Cronômetro: {{ time }}<span *ngIf="time">s</span></p>
   <p>Total de exercícios: {{ totalExercises }}</p>
   <p>Exercício - {{ exerciseName }}: {{ indexCurrentExercise }} de {{ totalExercises }}</p>
   <p>Repetições: {{ currentRepetition }} de {{ totalRepetitions }}</p>

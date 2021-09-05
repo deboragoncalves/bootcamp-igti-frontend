@@ -1,5 +1,5 @@
 <section>
-  <form [formGroup]="formNewExercise">
+  <form [formGroup]="formNewExercise" (ngSubmit)="addExercise()">
     <div class="input">
       <label for="name">Nome do exercício</label>
       <input type="text" id="name" formControlName="name" [(ngModel)]="name">
@@ -20,7 +20,7 @@
       <label for="repetion">Número de repetições</label>
       <input type="number" id="repetion" formControlName="repetition" [(ngModel)]="repetition">
     </div>
-    <button type="button" (click)="addExercise()"><a>Adicionar exercício</a></button>
+    <button [disabled]="!formNewExercise.valid" type="submit"><a>Adicionar exercício</a></button>
   </form>
   
   <ul *ngFor="let exercise of exercises; let i = index">
