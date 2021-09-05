@@ -4,10 +4,10 @@
   <p>Exercício - {{ exerciseName }}: {{ indexCurrentExercise }} de {{ totalExercises }}</p>
   <p>Repetições: {{ currentRepetition }} de {{ totalRepetitions }}</p>
   <p>Fase: {{ showStateExercise() }}</p>
-  <button type="button" (click)="start()">Iniciar</button>
-  <button type="button" (click)="stop()">Pausar</button>
-  <button type="button" (click)="restart()">Reiniciar</button>
-  <button type="button" (click)="next()">Próximo</button>
+  <button type="button" (click)="start()"><a>Iniciar</a></button>
+  <button type="button" (click)="stop()"><a>Pausar</a></button>
+  <button type="button" (click)="restart()"><a>Reiniciar</a></button>
+  <button type="button" (click)="next()"><a>Próximo</a></button>
 </section>
 
-<p *ngIf="!exercises">Não existem exercícios. <a routerLink="/new-exercise">Clique aqui</a> e faça o cadastro!</p>
+<p *ngIf="!exercises">Não existem exercícios. <a routerLink="/new-exercise">Clique aqui</a> e faça o cadastro.</p>

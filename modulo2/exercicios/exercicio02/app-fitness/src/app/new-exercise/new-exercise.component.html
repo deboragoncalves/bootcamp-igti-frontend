@@ -20,7 +20,7 @@
       <label for="repetion">Número de repetições</label>
       <input type="number" id="repetion" formControlName="repetition" [(ngModel)]="repetition">
     </div>
-    <button type="button" (click)="addExercise()">Adicionar exercício</button>
+    <button type="button" (click)="addExercise()"><a>Adicionar exercício</a></button>
   </form>
   
   <ul *ngFor="let exercise of exercises; let i = index">
@@ -29,6 +29,6 @@
     <li>Duração: {{ exercise.duration }}</li>
     <li>Descanso: {{ exercise.resting }}</li>
     <li>Repetição: {{ exercise.repetition }}</li>
-    <button type="button" (click)="deleteExercise(i)">Excluir exercício</button>
+    <button type="button" (click)="deleteExercise(i)"><a>Excluir exercício</a></button>
   </ul>
 </section>
