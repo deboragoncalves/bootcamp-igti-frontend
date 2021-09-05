@@ -1,3 +1,9 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -7,8 +13,28 @@ form {
 
 button {
     cursor: pointer;
+    margin: 10px 0;
+    padding: 8px;
+    border: solid 1px black;
 }
 
 ul {
     list-style-type: none;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input label {
+    text-align: center;
+}
+
+.input input {
+    margin: 10px;
 }
