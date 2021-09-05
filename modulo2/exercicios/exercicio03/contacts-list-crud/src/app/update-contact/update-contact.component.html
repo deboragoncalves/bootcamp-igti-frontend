@@ -1,1 +1,18 @@
-<p>Update</p>
+<section>
+    <p>Atualizar contato</p>
+    <form [formGroup]="updateContactForm" (ngSubmit)="updateContact()">
+        <div class="input">
+            <label for="name">Nome</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div class="input">
+            <label for="phone">Telefone</label>
+            <input type="text" id="phone" formControlName="phone">
+        </div>
+        <div>
+            <button type="submit">Atualizar</button>
+            <button type="button" routerLink="/contacts">Voltar</button>
+        </div>
+    </form>
+</section>
+
