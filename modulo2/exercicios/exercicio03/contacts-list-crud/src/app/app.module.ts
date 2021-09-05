@@ -5,10 +5,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CreateContactComponent } from './create-contact/create-contact.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { UpdateContactComponent } from './update-contact/update-contact.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateContactComponent,
+    ContactsComponent,
+    UpdateContactComponent
   ],
   imports: [
     BrowserModule,
