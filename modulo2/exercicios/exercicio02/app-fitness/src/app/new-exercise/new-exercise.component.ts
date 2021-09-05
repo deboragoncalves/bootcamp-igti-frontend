@@ -18,14 +18,12 @@ export class NewExerciseComponent {
   name: string;
   duration: number;
   repetition: number;
-  preparation: number;
   resting: number;
 
   formNewExercise: FormGroup = new FormGroup({
     name: new FormControl("", Validators.required),
     duration: new FormControl("", Validators.required),
     repetition: new FormControl("", Validators.required),
-    preparation: new FormControl("", Validators.required),
     resting: new FormControl("", Validators.required)
   })  
 
@@ -34,7 +32,6 @@ export class NewExerciseComponent {
     this.exercise = {
       name: this.name,
       duration: this.duration,
-      preparation: this.preparation,
       repetition: this.repetition,
       resting: this.resting
     }

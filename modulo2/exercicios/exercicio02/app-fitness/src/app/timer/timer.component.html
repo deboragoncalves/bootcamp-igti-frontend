@@ -1,9 +1,12 @@
-<section>
-  <p>Total de exercícios: 4</p>
-  <p>Exercício - 1 de 4: Abdominal</p>
-  <p>Repetições: 2/3</p>
+<section *ngIf="exercises">
+  <p>Total de exercícios: {{ totalExercises }}</p>
+  <p>Exercício - {{ exerciseName }}: {{ indexCurrentExercise }} de {{ totalExercises }}</p>
+  <p>Repetições: {{ currentRepetition }} de {{ totalRepetitions }}</p>
+  <p>Fase: {{ showStateExercise() }}</p>
   <button type="button">Iniciar</button>
   <button type="button" (click)="stop()">Pausar</button>
   <button type="button" (click)="restart()">Reiniciar</button>
-  <button type="button" (cick)="next()">Próximo</button>
+  <button type="button" (click)="next()">Próximo</button>
 </section>
+
+<p *ngIf="!exercises">Não existem exercícios. Faça o cadastro!</p>
