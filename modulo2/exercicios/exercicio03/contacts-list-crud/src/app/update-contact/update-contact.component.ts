@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Contact } from '../contact';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ContactService } from '../contact.service';
 
 @Component({
@@ -18,14 +17,14 @@ export class UpdateContactComponent implements OnInit {
     phone: new FormControl("", Validators.required)
   });
 
-  constructor(private router: ActivatedRoute, private contactService: ContactService) { }
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private contactService: ContactService) { }
 
   ngOnInit(): void {
     this.getContactId();
   }
 
   getContactId(): void {
-    this.router.paramMap.subscribe(paramMap => {
+    this.activatedRouter.paramMap.subscribe(paramMap => {
       if (paramMap) {
         this.id = paramMap.get("id");
         this.getContact(this.id);
@@ -44,7 +43,21 @@ export class UpdateContactComponent implements OnInit {
   }
 
   updateContact(): void {
-    console.log("entrou");
+
+    let contact = {
+      id: this.id,
+      ... this.updateContactForm.value
+    };
+
+    this.contactService.updateContact(contact).subscribe(updateContact => {
+
+      // Resetar
+      this.updateContactForm.reset(contact);
+
+      this.router.navigate(["/contacts"]);
+    }, error => {
+      console.log(error);
+    });
   }
 
 }
