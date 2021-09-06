@@ -12,7 +12,11 @@ export class ContactService {
   constructor(private httpClient: HttpClient) { }
 
   getContacts() {
-    return this.httpClient.get<Contact[]>(this.baseUrl + "contacts");
+    return this.httpClient.get<Contact[]>(this.baseUrl + "contacts?_sort=name");
+  }
+
+  getContactById(id: number) {
+    return this.httpClient.get<Contact>(this.baseUrl + "contacts/" + id);
   }
 
   createContact(contact: Contact) {

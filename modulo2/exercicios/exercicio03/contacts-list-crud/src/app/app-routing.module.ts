@@ -6,7 +6,7 @@ import { UpdateContactComponent } from './update-contact/update-contact.componen
 
 const routes: Routes = [
   { path: 'create-contact', component: CreateContactComponent },
-  { path: 'update-contact', component: UpdateContactComponent },
+  { path: 'update-contact/:id', component: UpdateContactComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: '', redirectTo: 'contacts', pathMatch: 'full' }
 ];

@@ -4,7 +4,7 @@
         <ul *ngFor="let contact of listContacts">
             <li>{{ contact.name }}</li>
             <li>{{ contact.phone }}</li>
-            <li><a routerLink="/update-contact">Atualizar</a></li>
+            <li><a routerLink="/update-contact/{{ contact.id }}">Atualizar</a></li>
             <li><a routerLink="/">Excluir</a></li>
         </ul>
     </ul>

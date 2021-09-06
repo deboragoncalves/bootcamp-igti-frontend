@@ -1,6 +1,6 @@
 <section>
     <p>Adicionar contato</p>
-    <form [formGroup]="addContactForm" (ngSubmit)="addContact()">
+    <form [formGroup]="addContactForm" class="form" (ngSubmit)="addContact()">
         <div class="input">
             <label for="name">Nome</label>
             <input type="text" id="name" formControlName="name">
@@ -10,7 +10,7 @@
             <input type="text" id="phone" formControlName="phone">
         </div>
         <div>
-            <button type="submit">Adicionar</button>
+            <button [disabled]="!addContactForm.valid" type="submit">Adicionar</button>
             <button type="button" routerLink="/contacts">Voltar</button>
         </div>
     </form>

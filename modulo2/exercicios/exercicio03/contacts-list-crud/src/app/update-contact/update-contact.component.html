@@ -10,7 +10,7 @@
             <input type="text" id="phone" formControlName="phone">
         </div>
         <div>
-            <button type="submit">Atualizar</button>
+            <button [disabled]="!updateContactForm.dirty || !updateContactForm.valid" type="submit">Atualizar</button>
             <button type="button" routerLink="/contacts">Voltar</button>
         </div>
     </form>
