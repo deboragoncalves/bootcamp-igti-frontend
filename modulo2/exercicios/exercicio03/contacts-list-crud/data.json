@@ -6,19 +6,9 @@
       "phone": "(41) 99812-9321"
     },
     {
-      "id": 2,
-      "name": "João",
-      "phone": "(51) 99543-9871"
-    },
-    {
       "id": 3,
-      "name": "Roberta",
+      "name": "Roberta Silva",
       "phone": "(49) 99123-3234"
-    },
-    {
-      "name": "Ricardo",
-      "phone": "1",
-      "id": 5
     }
   ]
 }

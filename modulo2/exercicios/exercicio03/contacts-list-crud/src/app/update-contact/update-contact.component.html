@@ -1,17 +1,17 @@
 <section>
     <p>Atualizar contato</p>
-    <form [formGroup]="updateContactForm" (ngSubmit)="updateContact()">
-        <div class="input">
-            <label for="name">Nome</label>
-            <input type="text" id="name" formControlName="name">
-        </div>
-        <div class="input">
-            <label for="phone">Telefone</label>
-            <input type="text" id="phone" formControlName="phone">
+    <form [formGroup]="updateContactForm" class="form" (ngSubmit)="updateContact()">
+        <div>
+            <label class="form-label label" for="name">Nome</label>
+            <input class="form-control input" type="text" id="name" formControlName="name">
         </div>
         <div>
-            <button [disabled]="!updateContactForm.dirty || !updateContactForm.valid" type="submit">Atualizar</button>
-            <button type="button" routerLink="/contacts">Voltar</button>
+            <label class="form-label label" for="phone">Telefone</label>
+            <input class="form-control input" type="text" id="phone" formControlName="phone">
+        </div>
+        <div class="buttons">
+            <button class="btn btn-primary" [disabled]="!updateContactForm.dirty || !updateContactForm.valid" type="submit">Atualizar</button>
+            <button class="btn btn-primary" type="button" routerLink="/contacts">Voltar</button>
         </div>
     </form>
 </section>

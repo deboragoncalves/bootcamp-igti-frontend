@@ -1,17 +1,17 @@
 <section>
     <p>Adicionar contato</p>
     <form [formGroup]="addContactForm" class="form" (ngSubmit)="addContact()">
-        <div class="input">
-            <label for="name">Nome</label>
-            <input type="text" id="name" formControlName="name">
-        </div>
-        <div class="input">
-            <label for="phone">Telefone</label>
-            <input type="text" id="phone" formControlName="phone">
+        <div>
+            <label class="form-label label" for="name">Nome</label>
+            <input class="form-control input" type="text" id="name" formControlName="name">
         </div>
         <div>
-            <button [disabled]="!addContactForm.valid" type="submit">Adicionar</button>
-            <button type="button" routerLink="/contacts">Voltar</button>
+            <label class="form-label label" for="phone">Telefone</label>
+            <input class="form-control input" type="text" id="phone" formControlName="phone">
+        </div>
+        <div class="buttons">
+            <button class="btn btn-primary" [disabled]="!addContactForm.valid" type="submit">Adicionar</button>
+            <button class="btn btn-primary" type="button" routerLink="/contacts">Voltar</button>
         </div>
     </form>
 </section>
