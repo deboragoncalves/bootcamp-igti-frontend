@@ -5,7 +5,7 @@
             <li>{{ contact.name }}</li>
             <li>{{ contact.phone }}</li>
             <li><a routerLink="/update-contact/{{ contact.id }}">Atualizar</a></li>
-            <li><a routerLink="/">Excluir</a></li>
+            <li><a (click)="deleteContact(contact)">Excluir</a></li>
         </ul>
     </ul>
     <a routerLink="/create-contact">Adicionar</a>

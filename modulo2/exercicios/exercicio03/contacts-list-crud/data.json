@@ -1,11 +1,6 @@
 {
   "contacts": [
     {
-      "id": 0,
-      "name": "Carolina",
-      "phone": "(47) 99432-1234"
-    },
-    {
       "id": 1,
       "name": "Clevenilson",
       "phone": "(41) 99812-9321"
@@ -19,11 +14,6 @@
       "id": 3,
       "name": "Roberta",
       "phone": "(49) 99123-3234"
-    },
-    {
-      "name": "Ricardo",
-      "phone": "1",
-      "id": 4
     },
     {
       "name": "Ricardo",

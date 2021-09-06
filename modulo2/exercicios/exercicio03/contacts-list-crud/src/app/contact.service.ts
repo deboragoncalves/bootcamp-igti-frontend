@@ -27,7 +27,7 @@ export class ContactService {
     return this.httpClient.put<Contact>(this.baseUrl + "contacts/" + contact.id, contact);
   }
 
-  deleteContact(id: number): void {
-    this.httpClient.delete(this.baseUrl + "contacts/" + id);
+  deleteContact(id: number) {
+    return this.httpClient.delete(this.baseUrl + "contacts/" + id);
   }
 }

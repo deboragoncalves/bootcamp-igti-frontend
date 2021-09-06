@@ -29,4 +29,11 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  deleteContact(contact: Contact): void {
+    this.contactService.deleteContact(contact.id).subscribe(() => {
+      let index = this.listContacts.indexOf(contact);
+      this.listContacts.splice(index, 1);
+    })
+  }
+
 }
