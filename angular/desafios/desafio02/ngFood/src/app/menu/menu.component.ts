@@ -30,17 +30,4 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  translateFoodTitle(foodTitle: string): string {
-    switch (foodTitle) {
-      case "acai":
-        return "Açaí"
-      case "sandwiches":
-        return "Sanduíches"
-      case "juices":
-        return "Sucos"
-      default:
-        return "";
-    }
-  }
-
 }
