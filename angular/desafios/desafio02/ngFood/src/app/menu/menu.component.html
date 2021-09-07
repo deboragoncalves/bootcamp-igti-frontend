@@ -1,8 +1,8 @@
 <section>
     <h4>Cardápio</h4>
-    <p>Total de pedidos: {{ totalRequests }}</p>
+    <p>Total de pedidos: {{ allRequests }}</p>
     <p class="request" routerLink="/requests">Ver pedido</p>
-    <p>R$ {{ totalValue }}</p>
+    <p>R$ {{ totalAllRequests }}</p>
     <section>
         <p>Sucos</p>
         <ul *ngFor="let juice of juices">

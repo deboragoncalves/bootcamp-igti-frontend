@@ -2,6 +2,10 @@ ul {
     list-style: none;
 }
 
+li {
+    cursor: pointer;
+}
+
 .request {
     cursor: pointer;
 }

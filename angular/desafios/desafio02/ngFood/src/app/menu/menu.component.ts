@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodRequestsService } from '../food-requests.service';
+import { TotalRequest } from '../totalRequest';
 
 @Component({
   selector: 'menu',
@@ -18,8 +19,17 @@ export class MenuComponent implements OnInit {
   acaiRequests: number = 0;
   sandwichRequests: number = 0;
 
-  totalRequests: number = 0;
-  totalValue: number = 0;
+  allRequests: number = 0;
+  totalValueRequest: number = 0;
+  totalAllRequests: number = 0;
+
+  
+  totalRequest: TotalRequest = {
+    name: "",
+    id: 0,
+    totalPrice: 0,
+    totalRequests: 0
+  }
 
   constructor(private foodRequestsService: FoodRequestsService) { }
 
@@ -30,7 +40,7 @@ export class MenuComponent implements OnInit {
   getData(): void {
     this.foodRequestsService.getRequests().subscribe(requests => {
       this.options = Object.values(requests);
-    
+
       this.juices = this.options[0];
       this.sandwhices = this.options[1];
       this.acai = this.options[2];
@@ -39,90 +49,50 @@ export class MenuComponent implements OnInit {
 
   juiceRequest(juice: any) {
 
-    let juiceRequestObject = {};
+    this.juiceRequests++;
 
-    if (juice.name == "Suco de laranja") {
-      this.juiceRequests++;
-
-      juiceRequestObject = {
-        requests: this.juiceRequests,
-        juice: juice.name,
-        total: juice.price * this.juiceRequests
-      }
-
-      this.totalValue += JSON.parse(JSON.stringify(juiceRequestObject)).total;
-    } else if (juice.name == "Suco de uva") {
-      this.juiceRequests++;
-
-      juiceRequestObject = {
-        requests: this.juiceRequests,
-        juice: juice.name,
-        total: juice.price * this.juiceRequests
-      }
-
-      this.totalValue += JSON.parse(JSON.stringify(juiceRequestObject)).total;
+    this.totalRequest = {
+      id: juice.id,
+      totalRequests: this.juiceRequests,
+      name: juice.name,
+      totalPrice: juice.price * this.juiceRequests
     }
 
-    this.totalRequests++;
+    this.totalValueRequest = JSON.parse(JSON.stringify(this.totalRequest)).totalPrice;
+    this.totalAllRequests += this.totalValueRequest;
+    this.allRequests++;
   }
 
   acaiRequest(acai: any) {
 
-    let acaiRequestObject = {};
+    this.acaiRequests++;
 
-    if (acai.name.includes("Leite ninho")) {
-      this.acaiRequests++;
-
-      acaiRequestObject = {
-        requests: this.acaiRequests,
-        acai: acai.name,
-        total: acai.price * this.acaiRequests
-      }  
-
-      this.totalValue += JSON.parse(JSON.stringify(acaiRequestObject)).total;
-    } else if (acai.name.includes("puro")) {
-      this.acaiRequests++;
-
-      acaiRequestObject = {
-        requests: this.acaiRequests,
-        acai: acai.name,
-        total: acai.price * this.acaiRequests
-      }
-
-      this.totalValue += JSON.parse(JSON.stringify(acaiRequestObject)).total;
+    this.totalRequest = {
+      id: acai.id,
+      totalRequests: this.acaiRequests,
+      name: acai.name,
+      totalPrice: acai.price * this.acaiRequests
     }
 
-    this.totalRequests++;
+    this.totalValueRequest = JSON.parse(JSON.stringify(this.totalRequest)).totalPrice;
+    this.totalAllRequests += this.totalValueRequest;
+    this.allRequests++;
   }
 
   sandwichRequest(sandwich: any) {
 
-    let sandwichRequestObject = {};
+    this.sandwichRequests++;
 
-    if (sandwich.name.includes("Egg")) {
-      this.sandwichRequests++;
-
-      sandwichRequestObject = {
-        requests: this.sandwichRequests,
-        sandwich: sandwich.name,
-        total: sandwich.price * this.sandwichRequests
-      }
-      
-      this.totalValue += JSON.parse(JSON.stringify(sandwichRequestObject)).total;
-
-    } else if (sandwich.name.includes("Burguer")) {
-      this.sandwichRequests++;
-
-      sandwichRequestObject = {
-        requests: this.juiceRequests,
-        sandwich: sandwich.name,
-        total: sandwich.price * this.sandwichRequests
-      }
-
-      this.totalValue += JSON.parse(JSON.stringify(sandwichRequestObject)).total;
+    this.totalRequest = {
+      id: sandwich.id,
+      totalRequests: this.sandwichRequests,
+      name: sandwich.name,
+      totalPrice: sandwich.price * this.sandwichRequests
     }
 
-    this.totalRequests++;
+    this.totalValueRequest = JSON.parse(JSON.stringify(this.totalRequest)).totalPrice;
+    this.totalAllRequests += this.totalValueRequest;
+    this.allRequests++;
   }
 
 }

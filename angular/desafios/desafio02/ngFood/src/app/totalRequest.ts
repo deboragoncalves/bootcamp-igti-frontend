@@ -1,7 +1,6 @@
-export interface Request {
+export interface TotalRequest {
     id: number,
     name: string,
-    price: number,
     totalRequests: number,
     totalPrice: number
 }
