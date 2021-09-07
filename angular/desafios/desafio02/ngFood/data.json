@@ -1,0 +1,40 @@
+{
+  "requests": {
+    "juices": [
+      {
+        "id": 0,
+        "name": "Suco de laranja",
+        "price": "7.90"
+      },
+      {
+        "id": 1,
+        "name": "Suco de uva",
+        "price": "7.90"
+      }
+    ],
+    "sandwiches": [
+      {
+        "id": 0,
+        "name": "X-Egg",
+        "price": "17.50"
+      },
+      {
+        "id": 1,
+        "name": "X-Burger",
+        "price": "19.50"
+      }
+    ],
+    "acai": [
+      {
+        "id": 0,
+        "name": "Açaí - Leite ninho - 300ml",
+        "price": "10.90"
+      },
+      {
+        "id": 1,
+        "name": "Açaí puro - 300ml",
+        "price": "8.90"
+      }
+    ]
+  }
+}
