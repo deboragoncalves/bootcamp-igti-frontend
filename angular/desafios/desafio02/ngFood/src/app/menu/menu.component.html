@@ -1,23 +1,23 @@
 <section>
     <h4>Cardápio</h4>
-    <p>Total de pedidos: </p>
+    <p>Total de pedidos: {{ totalRequests }}</p>
     <p class="request" routerLink="/requests">Ver pedido</p>
-    <p>R$ </p>
+    <p>R$ {{ totalValue }}</p>
     <section>
         <p>Sucos</p>
-        <ul *ngFor="let juice of juices; let i = index">
-            <li>{{ juice.name }}</li>
-            <li>R$ {{ juice.price }}</li>
+        <ul *ngFor="let juice of juices">
+            <li (click)="juiceRequest(juice)">{{ juice.name }}</li>
+            <li (click)="juiceRequest(juice)">R$ {{ juice.price }}</li>
         </ul>
         <p>Açaí</p>
         <ul *ngFor="let itemAcai of acai">
-            <li>{{ itemAcai.name }}</li>
-            <li>R$ {{ itemAcai.price }}</li>
+            <li (click)="acaiRequest(itemAcai)">{{ itemAcai.name }}</li>
+            <li (click)="acaiRequest(itemAcai)">R$ {{ itemAcai.price }}</li>
         </ul>
         <p>Sanduíches</p>
         <ul *ngFor="let sandwich of sandwhices">
-            <li>{{ sandwich.name }}</li>
-            <li>R$ {{ sandwich.price }}</li>
+            <li (click)="sandwichRequest(sandwich)" >{{ sandwich.name }}</li>
+            <li (click)="sandwichRequest(sandwich)" >R$ {{ sandwich.price }}</li>
         </ul>
     </section>
 </section>
