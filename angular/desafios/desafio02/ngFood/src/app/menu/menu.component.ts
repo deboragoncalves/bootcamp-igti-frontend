@@ -95,4 +95,7 @@ export class MenuComponent implements OnInit {
     this.allRequests++;
   }
 
+  // TODO: Corrigir valor total
+  // TODO: Componente pedidos
+
 }

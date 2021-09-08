@@ -1,23 +1,24 @@
 <section>
     <h4>Cardápio</h4>
-    <p>Total de pedidos: {{ allRequests }}</p>
-    <p class="request" routerLink="/requests">Ver pedido</p>
-    <p>R$ {{ totalAllRequests }}</p>
+    <div class="head">
+        <p class="title-head">Total de pedidos: {{ allRequests }}</p>
+        <button class="btn btn-outline-primary btn-sm" routerLink="/requests">Ver pedido</button>
+        <p class="title-head">R$ {{ totalAllRequests | number: '1.2-2' }}</p>
+    </div>
     <section>
-        <p>Sucos</p>
-        <ul *ngFor="let juice of juices">
-            <li (click)="juiceRequest(juice)">{{ juice.name }}</li>
-            <li (click)="juiceRequest(juice)">R$ {{ juice.price }}</li>
+        <p class="title-request">Sucos</p>
+        <ul class="list-group" *ngFor="let juice of juices">
+            <li class="list-group-item" (click)="juiceRequest(juice)">{{ juice.name }} | R$ {{ juice.price }}</li>
         </ul>
-        <p>Açaí</p>
-        <ul *ngFor="let itemAcai of acai">
-            <li (click)="acaiRequest(itemAcai)">{{ itemAcai.name }}</li>
-            <li (click)="acaiRequest(itemAcai)">R$ {{ itemAcai.price }}</li>
+        <p class="title-request">Açaí</p>
+        <ul class="list-group" *ngFor="let itemAcai of acai">
+            <li class="list-group-item" (click)="acaiRequest(itemAcai)">{{ itemAcai.name }} | R$ {{ itemAcai.price }}
+            </li>
         </ul>
-        <p>Sanduíches</p>
-        <ul *ngFor="let sandwich of sandwhices">
-            <li (click)="sandwichRequest(sandwich)" >{{ sandwich.name }}</li>
-            <li (click)="sandwichRequest(sandwich)" >R$ {{ sandwich.price }}</li>
+        <p class="title-request">Sanduíches</p>
+        <ul class="list-group" *ngFor="let sandwich of sandwhices">
+            <li class="list-group-item" (click)="sandwichRequest(sandwich)">{{ sandwich.name }} R$ {{ sandwich.price }}
+            </li>
         </ul>
     </section>
 </section>

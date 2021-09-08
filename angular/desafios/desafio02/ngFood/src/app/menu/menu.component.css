@@ -1,3 +1,15 @@
+h4 {
+    margin: 20px;
+    text-align: center;
+}
+
+.head {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 ul {
     list-style: none;
 }
@@ -6,6 +18,9 @@ li {
     cursor: pointer;
 }
 
-.request {
-    cursor: pointer;
+.title-request {
+    margin: 20px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
 }
