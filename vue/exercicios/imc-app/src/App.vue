@@ -3,19 +3,19 @@
   <form class="form">
     <div class="input">
       <label class="form-label" for="weight">Peso:</label>
-      <input class="form-control" type="text" v-model="weight" id="weight" tabindex="0" />
+      <input class="form-control" :disabled="imc != 0" type="text" v-model="weight" id="weight" tabindex="0" />
     </div>
     <div class="input">
       <label class="form-label" for="height">Altura:</label>
-      <input class="form-control" id="height" v-model="height" type="text" tabindex="0" />
+      <input class="form-control" :disabled="imc != 0" id="height" v-model="height" type="text" tabindex="0" />
     </div>
     <div class="buttons">
       <button class="btn btn-outline-primary" @click="calcIMC" type="button">Calcular</button>
       <button class="btn btn-outline-primary" @click="clear" type="button">Limpar</button>
     </div>
   </form>
-  <p class="imc">IMC: {{ imc }}</p>
-  <p class="classification">Classificação: {{ classification }}</p>
+  <p v-if="imc != 0" class="imc">IMC: {{ imc }}</p>
+  <p v-if="imc != 0" class="classification">Classificação: {{ classification }}</p>
 </template>
 
 <script>
