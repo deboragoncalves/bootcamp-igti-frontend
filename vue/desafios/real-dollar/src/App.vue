@@ -21,7 +21,6 @@
 
 <script>
 export default {
-  name: "Real/Dollar",
   data() {
     return {
       real: '',
