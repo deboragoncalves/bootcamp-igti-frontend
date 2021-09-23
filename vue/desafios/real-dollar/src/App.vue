@@ -4,23 +4,42 @@
     <form class="form">
       <div class="input">
         <label for="real">Reais (R$):</label>
-        <input id="real" class="form-control" type="text">
+        <input id="real" :disabled="realToDollar != 0" v-model="real" class="form-control" type="number">
       </div>
       <div class="input">
         <label for="dolar">Cotação do dólar ($):</label>
-        <input id="dolar" class="form-control" type="text">
+        <input id="dolar" :disabled="realToDollar != 0" v-model="dollar" class="form-control" type="number">
       </div>
       <div class="buttons">
-        <button class="btn btn-outline-success" type="button">Calcular</button>
-        <button class="btn btn-outline-success" type="button">Limpar</button>
+        <button class="btn btn-outline-success" v-on:click="convertRealToDollar" type="button">Calcular</button>
+        <button class="btn btn-outline-success" v-on:click="clearInputs" type="button">Limpar</button>
       </div>
     </form>
+    <p v-if="realToDollar != 0" class="result">Com R$ {{ real }} reais, você pode comprar $ {{realToDollar}} dólares.</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Real/Dollar"
+  name: "Real/Dollar",
+  data() {
+    return {
+      real: '',
+      dollar: '',
+      realToDollar: 0
+    }
+  },
+  methods: {
+    convertRealToDollar() {
+      this.realToDollar = this.real / this.dollar;
+      this.realToDollar = this.realToDollar.toFixed(2);
+    },
+    clearInputs() {
+      this.real = '';
+      this.dollar = '';
+      this.realToDollar = 0;
+    }
+  }
 };
 </script>
 
