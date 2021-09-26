@@ -25,12 +25,14 @@ export default {
             this.$emit("backTodoList");
         },
         saveItem() {
-            this.$emit("saveItem", { description: this.description });
+
+            // Faz spread quando tiver id
+            this.$emit("saveItem", { ...this.item, description: this.description });
         }
     },
     created() {
         if (this.itemList) {
-            
+
             // Se existir, setar
             this.description = this.itemList.description;
         }
