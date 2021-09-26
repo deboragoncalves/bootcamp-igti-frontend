@@ -1,9 +1,9 @@
 <template>
   <div id="main">
     <p class="title">Todo List</p>
-    <todo-list :todoList="todoList" v-if="!createItem"></todo-list>
-    <button class="btn btn-outline-success" type="button" v-if="!createItem" @click="createNewItem">Nova tarefa</button>
-    <new-item @saveItem="saveNewItem" @backTodoList="backMainPage" v-if="createItem"></new-item>
+    <todo-list @editItem="editItem" @deleteItem="deleteItem" :todoList="todoList" v-if="!saveItem"></todo-list>
+    <button class="btn btn-outline-success" type="button" v-if="!saveItem" @click="createNewItem">Nova tarefa</button>
+    <new-item :itemList="itemList" @saveItem="saveNewItem" @backTodoList="backMainPage" v-if="saveItem"></new-item>
   </div>
 </template>
 
@@ -14,8 +14,9 @@ import NewItem from './components/NewItem.vue';
 export default {
   data() {
     return {
-      createItem: false,
-      todoList: []
+      saveItem: false,
+      todoList: [],
+      itemList: null
     }
   },
   components: { 
@@ -24,15 +25,30 @@ export default {
   }, 
   methods: {
     createNewItem() {
-      this.createItem = true;
+      this.saveItem = true;
     },
     backMainPage() {
-      this.createItem = false;
+      this.saveItem = false;
     },
     saveNewItem(newItem) {
       this.todoList.push(newItem);
       localStorage.setItem("todoList", JSON.stringify(this.todoList));
-      this.createItem = false;
+      this.saveItem = false;
+    },
+    deleteItem(index) {
+
+      // Splice: index, qtde itens
+      this.todoList.splice(index, 1);
+
+      localStorage.setItem("todoList", JSON.stringify(this.todoList));
+    },
+    editItem(index) {
+      // Setar a variável itemList (controle para edição)
+
+      this.itemList = this.todoList[index];
+
+      // Edição
+      this.saveItem = true;
     }
   },
   created() {

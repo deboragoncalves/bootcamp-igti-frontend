@@ -4,7 +4,7 @@
     <ul class="todo-list" v-for="(item, index) in todoList" :key="index">
       <li class="item-list description">{{ item.description }}</li>
       <li class="item-list">
-        <svg
+        <svg @click="editItemList(index)"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -18,7 +18,7 @@
         </svg>
       </li>
       <li class="item-list">
-        <svg
+        <svg @click="deleteItemList(index)"
           xmlns="http://www.w3.org/2000/svg"
           width="16"
           height="16"
@@ -40,6 +40,14 @@ export default {
   props: {
     todoList: Array,
   },
+  methods: {
+      deleteItemList(index) {
+          this.$emit("deleteItem", index);
+      },
+      editItemList(index) {
+          this.$emit("editItem", index);
+      }
+  }
 };
 </script>
 
@@ -53,6 +61,7 @@ export default {
         padding: 0 10px;
     }
 
+    /* Flex-grow: 1 = width 100% */
     .description {
         flex-grow: 1;
     }

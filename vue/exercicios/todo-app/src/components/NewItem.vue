@@ -12,6 +12,9 @@
 
 <script>
 export default {
+    props: {
+        itemList: Object
+    },
     data() {
         return {
             description: ""
@@ -24,6 +27,9 @@ export default {
         saveItem() {
             this.$emit("saveItem", { description: this.description });
         }
+    },
+    created() {
+        console.log(this.itemList);
     }
 }
 </script>
