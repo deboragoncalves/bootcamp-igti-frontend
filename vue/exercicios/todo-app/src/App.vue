@@ -1,28 +1,38 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="main">
+    <todo-list v-if="!createItem"></todo-list>
+    <button class="btn btn-outline-success" type="button" v-if="!createItem" @click="createNewItem">Nova tarefa</button>
+    <new-item v-if="createItem"></new-item>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoList from './components/TodoList.vue';
+import NewItem from './components/NewItem.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'TODO List',
+  data() {
+    return {
+      createItem: false
+    }
+  },
+  components: { 
+    TodoList,
+    NewItem 
+  }, 
+  methods: {
+    createNewItem() {
+      this.createItem = !this.createItem;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 </style>
