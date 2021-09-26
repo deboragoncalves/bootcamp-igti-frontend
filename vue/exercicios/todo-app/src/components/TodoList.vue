@@ -52,13 +52,20 @@ export default {
 </script>
 
 <style scoped>
+    .title {
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
+    }
+
     .todo-list {
         display: flex;
         list-style-type: none;
+        margin: 0 20px;
     }
 
     .item-list {
-        padding: 0 10px;
+        padding: 5px 10px;
     }
 
     /* Flex-grow: 1 = width 100% */

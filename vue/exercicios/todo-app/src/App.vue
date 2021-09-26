@@ -1,8 +1,7 @@
 <template>
   <div id="main">
-    <p class="title">Todo List</p>
     <todo-list @editItem="editItem" @deleteItem="deleteItem" :todoList="todoList" v-if="!saveItem"></todo-list>
-    <button class="btn btn-outline-success" type="button" v-if="!saveItem" @click="createNewItem">Nova tarefa</button>
+    <button class="btn btn-outline-success button-new-item" type="button" v-if="!saveItem" @click="createNewItem">Nova tarefa</button>
     <new-item :itemList="itemList" @saveItem="saveNewItem" @backTodoList="backMainPage" v-if="saveItem"></new-item>
   </div>
 </template>
@@ -35,7 +34,7 @@ export default {
     },
     saveNewItem(item) {
       if (item.id) {
-        
+
         // Verificar se id existe (put)
         let index = item.findIndex(i => i.id === item.id);
         item = this.itemList[index];
@@ -79,6 +78,8 @@ export default {
     }
   }
 }
+
+// TODO: Corrigir bug put
 </script>
 
 <style>
@@ -86,5 +87,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.button-new-item {
+  margin: 10px 20px;
 }
 </style>

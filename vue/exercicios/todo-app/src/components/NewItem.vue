@@ -2,11 +2,13 @@
     <div class="main">
         <p class="title">Nova tarefa</p>
         <form class="form">
-            <label for="description">Descrição</label>
-            <input v-model="description" class="form-control" id="description" type="text">
-            <button class="btn btn-outline-success" @click="saveItem" type="submit">Salvar</button>
+            <label for="description">Descrição:</label>
+            <input tabindex="0" v-model="description" class="form-control" id="description" type="text">
         </form>
-        <button class="btn btn-outline-success" @click="backTodoList" type="button">Voltar</button>
+        <div class="buttons">
+            <button class="btn btn-outline-success" @click="saveItem" type="button">Salvar</button>
+            <button class="btn btn-outline-success" @click="backTodoList" type="button">Voltar</button>
+        </div>        
     </div>
 </template>
 
@@ -25,9 +27,7 @@ export default {
             this.$emit("backTodoList");
         },
         saveItem() {
-
-            // Faz spread quando tiver id
-            this.$emit("saveItem", { ...this.item, description: this.description });
+            this.$emit("saveItem", { description: this.description });
         }
     },
     created() {
@@ -41,4 +41,32 @@ export default {
 </script>
 
 <style scoped>
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .form input {
+        width: 120%;
+    }
+
+    .form label {
+        padding: 10px 0;
+    }
+
+    .buttons {
+        display: flex;
+    }
+
+    .buttons button {
+        margin: 20px 10px;
+    }
 </style>
