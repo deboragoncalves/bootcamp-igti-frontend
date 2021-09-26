@@ -1,9 +1,21 @@
 <template>
-  <div class="main">Hello</div>
+  <div class="main">
+    <pokemon-list></pokemon-list>
+    <pokemon-details></pokemon-details>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
+import PokemonList from './components/PokemonList.vue';
+import PokemonDetails from './components/PokemonDetails.vue';
+
 export default {
+
+  components: {
+    PokemonList,
+    PokemonDetails
+  }
 }
 </script>
 

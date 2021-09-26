@@ -1,4 +1,25 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import App from './App.vue';
+import PokemonList from './components/PokemonList.vue';
+import PokemonDetails from './components/PokemonDetails.vue';
 
-createApp(App).mount('#app')
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/',
+            component: PokemonList
+        },
+        {
+            path: '/pokemon/:id',
+            name: "pokemonDetails",
+            component: PokemonDetails
+        }
+    ]
+})
+
+const app = createApp(App);
+app.use(router);
+app.mount('#app');
