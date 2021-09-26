@@ -16,7 +16,8 @@ export default {
     return {
       saveItem: false,
       todoList: [],
-      itemList: null
+      itemList: null,
+      id: 1
     }
   },
   components: { 
@@ -25,13 +26,27 @@ export default {
   }, 
   methods: {
     createNewItem() {
+      // Limpar
+      this.itemList = null;
       this.saveItem = true;
     },
     backMainPage() {
       this.saveItem = false;
     },
-    saveNewItem(newItem) {
-      this.todoList.push(newItem);
+    saveNewItem(item) {
+      if (item.id) {
+        
+        // Verificar se id existe (put)
+        let index = item.findIndex(i => i.id === item.id);
+        item = this.itemList[index];
+      } else {
+        // Ao criar, criar chave id com spread
+        this.item = { id: this.id, ...this.item}
+        this.todoList.push(item);
+
+        this.id++;
+      }
+
       localStorage.setItem("todoList", JSON.stringify(this.todoList));
       this.saveItem = false;
     },

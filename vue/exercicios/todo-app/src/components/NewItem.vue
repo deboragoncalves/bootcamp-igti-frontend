@@ -29,7 +29,11 @@ export default {
         }
     },
     created() {
-        console.log(this.itemList);
+        if (this.itemList) {
+            
+            // Se existir, setar
+            this.description = this.itemList.description;
+        }
     }
 }
 </script>
