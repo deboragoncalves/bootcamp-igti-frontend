@@ -1,8 +1,9 @@
 <template>
   <div id="main">
+    <p class="title">Todo List</p>
     <todo-list v-if="!createItem"></todo-list>
     <button class="btn btn-outline-success" type="button" v-if="!createItem" @click="createNewItem">Nova tarefa</button>
-    <new-item v-if="createItem"></new-item>
+    <new-item @saveItem="saveNewItem" @backTodoList="backMainPage" v-if="createItem"></new-item>
   </div>
 </template>
 
@@ -11,10 +12,10 @@ import TodoList from './components/TodoList.vue';
 import NewItem from './components/NewItem.vue';
 
 export default {
-  name: 'TODO List',
   data() {
     return {
-      createItem: false
+      createItem: false,
+      todoList: []
     }
   },
   components: { 
@@ -23,7 +24,16 @@ export default {
   }, 
   methods: {
     createNewItem() {
-      this.createItem = !this.createItem;
+      this.createItem = true;
+    },
+
+    backMainPage() {
+      this.createItem = false;
+    },
+
+    saveNewItem(newItem) {
+      this.todoList.push(newItem);
+      localStorage.setItem("todoList", JSON.stringify(this.todoList));
     }
   }
 }
