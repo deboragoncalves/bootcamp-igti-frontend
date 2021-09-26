@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <p class="title">Todo List</p>
-    <todo-list v-if="!createItem"></todo-list>
+    <todo-list :todoList="todoList" v-if="!createItem"></todo-list>
     <button class="btn btn-outline-success" type="button" v-if="!createItem" @click="createNewItem">Nova tarefa</button>
     <new-item @saveItem="saveNewItem" @backTodoList="backMainPage" v-if="createItem"></new-item>
   </div>
@@ -26,14 +26,25 @@ export default {
     createNewItem() {
       this.createItem = true;
     },
-
     backMainPage() {
       this.createItem = false;
     },
-
     saveNewItem(newItem) {
       this.todoList.push(newItem);
       localStorage.setItem("todoList", JSON.stringify(this.todoList));
+      this.createItem = false;
+    }
+  },
+  created() {
+    // Atualizar lista - localStorage
+
+    let todoList = localStorage.getItem("todoList");
+
+    if (todoList) {
+
+      // Object
+
+      this.todoList = JSON.parse(todoList);
     }
   }
 }
