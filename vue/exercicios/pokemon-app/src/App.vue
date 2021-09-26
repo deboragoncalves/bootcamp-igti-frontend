@@ -1,9 +1,8 @@
 <template>
-  <div id="app">Hello</div>
+  <div class="main">Hello</div>
 </template>
 
 <script>
-
 export default {
 }
 </script>
@@ -12,6 +11,6 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Segoe 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 </style>
