@@ -11,7 +11,6 @@ import PokemonList from './components/PokemonList.vue';
 import PokemonDetails from './components/PokemonDetails.vue';
 
 export default {
-
   components: {
     PokemonList,
     PokemonDetails
