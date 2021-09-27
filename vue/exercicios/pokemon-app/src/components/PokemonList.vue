@@ -3,6 +3,7 @@
     <p class="title">Lista de pokemons</p>
     <ul v-for="(pokemon, index) in pokemonList" :key="index">
       <li>{{ pokemon.name }}</li>
+      <li>{{ pokemon.url }}</li>
       <!-- TODO: mostrar imagem Pokemon
         <li><img :src="getPokemonId(pokemon.url)" alt="Pokemon"></li> 
       -->
@@ -11,32 +12,33 @@
 </template>
 
 <script>
-import { getPokemonList } from '../service/pokemonService.js';
+import { getPokemonList } from "../service/pokemonService.js";
 
 export default {
   data() {
     return {
       pokemonList: [],
-      getPokemonId: null,
       pokemonId: 0,
-      getImagePokemonUrl: null
-    }
+    };
   },
   mounted() {
-    getPokemonList().then(response => {
+    getPokemonList().then((response) => {
       this.pokemonList = response.results;
+      this.getPokemonId(this.pokemonList);
     });
+  },
+  methods: {
+    getPokemonId(pokemonList) {
 
-    /* TODO: mostrar imagem Pokemon
+      for (let pokemon of pokemonList) {
+        let url = pokemon.url;
+        url = url.replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/", "");
+        this.pokemonId = parseInt(url);
+      }
 
-    // Get id e url pokemon
-    this.getPokemonId = url => {
-      url = url.replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/", "");
-      this.pokemonId = parseInt(url);
-      return getPokemonImageUrl(this.pokemonId);
-    };
-    */
+      // TODO: mostrar imagem Pokemon
 
+    }
   }
 }
 </script>
