@@ -2,7 +2,10 @@
   <div class="main" v-if="showPokemonList">
     <p class="title">Lista de pokemons</p>
     <ul v-for="(pokemon, index) in pokemonList" :key="index">
-      <li @click="goToDetailsComponent(pokemon.url)">{{ pokemon.name }}</li>
+      <li class="pokemon-name" @click="goToDetailsComponent(pokemon.url)">
+        <span>Nome:</span>
+        {{ pokemon.name }}
+      </li>
       <!-- TODO: mostrar imagem Pokemon
         <li><img :src="getPokemonId(pokemon.url)" alt="Pokemon"></li> 
       -->
@@ -41,8 +44,31 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+.title {
+  text-align: center;
+  margin: 10px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 24px;
+}
+
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
+
+.pokemon-name {
+  cursor: pointer;
+  border-bottom: 1px solid lightgrey;
+  margin: 0 10px;
+  padding: 15px 10px;
+}
+
+.pokemon-name span {
+  font-weight: 600;
+}
+
 </style>
