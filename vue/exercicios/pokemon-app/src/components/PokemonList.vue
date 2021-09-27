@@ -35,6 +35,9 @@ export default {
       this.showPokemonList = false;
     }
   }
+
+  // TODO: mostrar imagem Pokemon
+  // TODO: Loader
 }
 </script>
 
