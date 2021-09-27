@@ -7,11 +7,18 @@ const getPokemonList = async () => {
     return response.data;
 }
 
+const getPokemonById = async (id) => {
+    let response = await axios.get(baseUrl + "/" + id);
+    return response.data;
+}
+
+/* TODO: Mostrar imagem pokemon
 const getPokemonImageUrl = id => {
     return "https://raw.githubusercontent.com/PokeAPI/sprites/master/pokemon/" + id + ".png";
 }
+*/
 
 export {
     getPokemonList,
-    getPokemonImageUrl
+    getPokemonById
 }
