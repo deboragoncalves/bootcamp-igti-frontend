@@ -1,9 +1,8 @@
 <template>
-  <div class="main">
+  <div class="main" v-if="showPokemonList">
     <p class="title">Lista de pokemons</p>
     <ul v-for="(pokemon, index) in pokemonList" :key="index">
-      <li>{{ pokemon.name }}</li>
-      <li>{{ pokemon.url }}</li>
+      <li @click="goToDetailsComponent(pokemon.url)">{{ pokemon.name }}</li>
       <!-- TODO: mostrar imagem Pokemon
         <li><img :src="getPokemonId(pokemon.url)" alt="Pokemon"></li> 
       -->
@@ -18,26 +17,22 @@ export default {
   data() {
     return {
       pokemonList: [],
-      pokemonId: 0,
+      showPokemonList: false
     };
   },
   mounted() {
+    this.showPokemonList = !this.showPokemonList;
+
     getPokemonList().then((response) => {
       this.pokemonList = response.results;
-      this.getPokemonId(this.pokemonList);
     });
   },
   methods: {
-    getPokemonId(pokemonList) {
-
-      for (let pokemon of pokemonList) {
-        let url = pokemon.url;
-        url = url.replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/", "");
-        this.pokemonId = parseInt(url);
-      }
-
-      // TODO: mostrar imagem Pokemon
-
+    goToDetailsComponent(url) {
+      let urlPokemon = url.replace("https://pokeapi.co/api/v2/pokemon/", "").replace("/", "");
+      let idPokemon = parseInt(urlPokemon);
+      this.$router.push({ name: "pokemonDetails", params: { id: idPokemon }})
+      this.showPokemonList = false;
     }
   }
 }
