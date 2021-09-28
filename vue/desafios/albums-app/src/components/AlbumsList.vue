@@ -6,33 +6,45 @@
 </template>
 
 <script>
-import { getAlbumsList } from '../service/albumsService.js';
+import { getAlbumsList } from "../service/albumsService.js";
 
 export default {
   data() {
     return {
-      albumsList: []
-    }
+      albumsList: [],
+    };
   },
   mounted() {
-    getAlbumsList().then(response => {
+    getAlbumsList().then((response) => {
       this.albumsList = response;
     });
   },
   methods: {
     showPhotosAlbum(id) {
-      this.$router.push({ name: "albumPhotos", params: { id: id }})
-    }
-  }
-}
+      this.$router.push({ name: "albumPhotos", params: { id: id } });
+    },
+  },
+};
 </script>
 
 <style scoped>
+.title {
+  text-align: center;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 ul li {
   cursor: pointer;
+  border-bottom: 1px solid lightgrey;
+  margin: 0 10px;
+  padding: 15px 10px;
 }
 </style>
