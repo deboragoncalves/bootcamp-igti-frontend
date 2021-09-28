@@ -20,11 +20,10 @@ export default {
 
         getPhotosAlbum(id).then(response => {
             this.photosList = response;
-            console.log(this.photosList[0].thumbnailUrl);
         });
     }
 
-    // TODO: substituir foto
+    // TODO: substituir foto (API https://via.placeholder.com/150/92c952)
 }
 </script>
 
