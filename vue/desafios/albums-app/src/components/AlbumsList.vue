@@ -1,7 +1,7 @@
 <template>
   <p class="title">Lista de álbuns</p>
   <ul v-for="(album, index) in albumsList" :key="index">
-    <li>{{ album.title }}</li>
+    <li @click="showPhotosAlbum(album.id)">{{ album.title }}</li>
   </ul>
 </template>
 
@@ -18,8 +18,11 @@ export default {
     getAlbumsList().then(response => {
       this.albumsList = response;
     });
-
-    // TODO: Consumir endpoint: /users/1/albums e pegar chave thumbnailUrl
+  },
+  methods: {
+    showPhotosAlbum(id) {
+      this.$router.push({ name: "albumPhotos", params: { id: id }})
+    }
   }
 }
 </script>
@@ -27,5 +30,9 @@ export default {
 <style scoped>
 ul {
   list-style-type: none;
+}
+
+ul li {
+  cursor: pointer;
 }
 </style>
