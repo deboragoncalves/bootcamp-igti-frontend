@@ -1,29 +1,31 @@
 <div class="main">
-    <form>
+    <form [formGroup]="travelForm" (ngSubmit)="validatedForm()">
         <div class="input-select">
             <p>País de origem:</p>
-            <select class="form-select" [(ngModel)]="originCountry" name="originCountry" (ngModelChange)="onChangeOriginCountry($event)">
+            <select class="form-select" formControlName="originCountry" (ngModelChange)="onChangeOriginCountry($event)">
                 <option selected>Selecione o país de origem</option>
                 <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
+            <p *ngIf="invalidCountry">O país de origem não pode ser igual ao país de destino</p>
         </div>
         <div class="input-select">
             <p>País de destino:</p>
-            <select class="form-select" [(ngModel)]="destinyCountry" name="destinyCountry" (ngModelChange)="onChangeDestinyCountry($event)">
+            <select class="form-select" formControlName="destinyCountry" (ngModelChange)="onChangeDestinyCountry($event)">
                 <option selected>Selecione o país de destino</option>
                 <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
+            <p *ngIf="invalidCountry">O país de origem não pode ser igual ao país de destino</p>
         </div>
         <div class="input-select">
             <p>Cidade de origem:</p>
-            <select class="form-select">
+            <select class="form-select" formControlName="originCity">
                 <option selected>Selecione a cidade de origem</option>
                 <option *ngFor="let country of originCountryCities">{{ country.city }}</option>
             </select>
         </div>
         <div class="input-select">
             <p>Cidade de destino:</p>
-            <select class="form-select">
+            <select class="form-select" formControlName="destinyCity">
                 <option selected>Selecione a cidade de destino</option>
                 <option *ngFor="let country of destinyCountryCities">{{ country.city }}</option>
             </select>
@@ -31,26 +33,29 @@
         <div class="input-number">
             <label for="adults">Adultos:</label>
             <button type="button" (click)="increaseAdults()">+</button>
-            <input [(ngModel)]="adults" name="adults" id="adults" type="number">
+            <input formControlName="adults" id="adults" type="number">
             <button type="button" (click)="decreaseAdults()">-</button>
+            <p *ngIf="invalidAdults">O número de adultos não pode ser menor que 1</p>
         </div>
         <div class="input-number">
             <label for="childs">Crianças:</label>
             <button type="button" (click)="increaseChilds()">+</button>
-            <input [(ngModel)]="childs" name="childs" id="childs" type="number">
+            <input formControlName="childs" id="childs" type="number">
             <button type="button" (click)="decreaseChilds()">-</button>
+            <p *ngIf="invalidChilds">O número de crianças não pode ser menor que 0</p>
         </div>
         <div class="input-radio">
-            <input name="planeClass" id="economic-class" type="radio">
+            <input formControlName="economicClass" value="economicClass" (ngModelChange)="onChangeEconomicClass($event)" id="economic-class" type="radio">
             <label for="economic-class">Econômica</label>
         </div>
         <div class="input-radio">
-            <input name="planeClass" id="executive-class" type="radio">
+            <input formControlName="executiveClass" value="executiveClass" (ngModelChange)="onChangeExecutiveClass($event)" id="executive-class" type="radio">
             <label for="executive-class">Executiva</label>
         </div>
         <div class="input-range">
             <label for="miles" class="form-label">Utilizar {{ miles }} milhas: </label>
-            <input type="range" [ngModel]="miles" name="miles" (ngModelChange)="onChangeMiles($event)" class="form-range" id="miles">
+            <input type="range" formControlName="miles" (ngModelChange)="onChangeMiles($event)" class="form-range" id="miles">
         </div>
+        <button type="submit">Calcular o preço da viagem</button>
     </form>
 </div>
