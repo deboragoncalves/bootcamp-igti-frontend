@@ -18,6 +18,7 @@ export class GetTravelInformationsComponent implements OnInit {
 
   adults: number = 0;
   childs: number = 0;
+  miles: number = 0;
 
   constructor(private countriesService: CountriesService) { }
 
@@ -37,6 +38,10 @@ export class GetTravelInformationsComponent implements OnInit {
     this.getDestinyCountryCities();
   }
 
+  onChangeMiles(newMiles: number): void {
+    this.miles = newMiles;
+  }
+ 
   getOriginCountryCities(): void {
 
     // TODO: Melhorar

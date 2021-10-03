@@ -41,16 +41,16 @@
             <button type="button" (click)="decreaseChilds()">-</button>
         </div>
         <div class="input-radio">
-            <input id="economic-class" type="radio">
+            <input name="planeClass" id="economic-class" type="radio">
             <label for="economic-class">Econômica</label>
         </div>
         <div class="input-radio">
             <input name="planeClass" id="executive-class" type="radio">
-            <label name="planeClass" for="executive-class">Executiva</label>
+            <label for="executive-class">Executiva</label>
         </div>
         <div class="input-range">
-            <label for="miles" class="form-label">Utilizar 0 milhas: </label>
-            <input type="range" class="form-range" id="miles">
+            <label for="miles" class="form-label">Utilizar {{ miles }} milhas: </label>
+            <input type="range" [ngModel]="miles" name="miles" (ngModelChange)="onChangeMiles($event)" class="form-range" id="miles">
         </div>
     </form>
 </div>
