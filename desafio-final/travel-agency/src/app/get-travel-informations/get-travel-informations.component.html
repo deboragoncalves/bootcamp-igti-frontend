@@ -2,28 +2,28 @@
     <form>
         <div class="input-select">
             <p>País de origem:</p>
-            <select class="form-select">
+            <select class="form-select" [(ngModel)]="originCountry" name="originCountry" (ngModelChange)="onChangeOriginCountry($event)">
+                <option selected>Selecione o país de origem</option>
                 <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
         </div>
         <div class="input-select">
             <p>País de destino:</p>
-            <select class="form-select">
+            <select class="form-select" [(ngModel)]="destinyCountry" name="destinyCountry" (ngModelChange)="onChangeDestinyCountry($event)">
+                <option selected>Selecione o país de destino</option>
                 <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
         </div>
         <div class="input-select">
             <p>Cidade de origem:</p>
             <select class="form-select">
-                <option selected>Joinville</option>
-                <option value="Florianópolis">Florianópolis</option>
+                <option *ngFor="let country of originCountryCities">{{ country.city }}</option>
             </select>
         </div>
         <div class="input-select">
-            <p>Cidade de origem:</p>
+            <p>Cidade de destino:</p>
             <select class="form-select">
-                <option selected>Joinville</option>
-                <option value="Florianópolis">Florianópolis</option>
+                <option *ngFor="let country of destinyCountryCities">{{ country.city }}</option>
             </select>
         </div>
         <div class="input-number">
