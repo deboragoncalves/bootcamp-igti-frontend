@@ -52,6 +52,7 @@
             <input formControlName="executiveClass" value="executiveClass" (ngModelChange)="onChangeExecutiveClass($event)" id="executive-class" type="radio">
             <label for="executive-class">Executiva</label>
         </div>
+        <p *ngIf="invalidClass">Selecione uma opção de classe</p>
         <div class="input-range">
             <label for="miles" class="form-label">Utilizar {{ miles }} milhas: </label>
             <input type="range" formControlName="miles" (ngModelChange)="onChangeMiles($event)" class="form-range" id="miles">

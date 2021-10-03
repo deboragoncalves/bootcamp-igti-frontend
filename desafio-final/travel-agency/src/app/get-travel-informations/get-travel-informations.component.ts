@@ -1,6 +1,7 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CountriesService } from '../countries-service.service';
 import { Country } from '../country';
 
@@ -20,10 +21,11 @@ export class GetTravelInformationsComponent implements OnInit {
   invalidCountry: boolean = false;
   invalidAdults: boolean = false;
   invalidChilds: boolean = false;
+  invalidClass: boolean = false;
 
   miles: number = 0;
 
-  constructor(private countriesService: CountriesService, private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private countriesService: CountriesService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.countriesService.getCountriesInformation().subscribe(countries => {
@@ -155,15 +157,28 @@ export class GetTravelInformationsComponent implements OnInit {
   validatedForm(): void {
     if (this.travelForm.get("originCountry")?.value == this.travelForm.get("destinyCountry")?.value) {
       this.invalidCountry = true;
+      return;
     }
 
     if (this.travelForm.get("adults")?.value < 1) {
       this.invalidAdults = true;
+      return;
     }
 
     if (this.travelForm.get("childs")?.value < 0) {
       this.invalidChilds = true;
+      return;
     }
+
+    if (!this.travelForm.get("economicClass")?.value && !this.travelForm.get("executiveClass")?.value) {
+      this.invalidClass = true;
+      return;
+    }
+
+    if (this.travelForm.valid) {
+      this.router.navigateByUrl('/info');
+    }
+
   }
 
 }

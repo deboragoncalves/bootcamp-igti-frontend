@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GetTravelInformationsComponent } from './get-travel-informations/get-travel-informations.component';
+import { ShowTravelInformationsComponent } from './show-travel-informations/show-travel-informations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetTravelInformationsComponent
+    GetTravelInformationsComponent,
+    ShowTravelInformationsComponent
   ],
   imports: [
     BrowserModule,
