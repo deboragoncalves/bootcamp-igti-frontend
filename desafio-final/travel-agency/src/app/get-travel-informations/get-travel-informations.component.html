@@ -17,34 +17,36 @@
         <div class="input-select">
             <p>Cidade de origem:</p>
             <select class="form-select">
+                <option selected>Selecione a cidade de origem</option>
                 <option *ngFor="let country of originCountryCities">{{ country.city }}</option>
             </select>
         </div>
         <div class="input-select">
             <p>Cidade de destino:</p>
             <select class="form-select">
+                <option selected>Selecione a cidade de destino</option>
                 <option *ngFor="let country of destinyCountryCities">{{ country.city }}</option>
             </select>
         </div>
         <div class="input-number">
             <label for="adults">Adultos:</label>
-            <button type="button">+</button>
-            <input id="adults" type="number">
-            <button type="button">-</button>
+            <button type="button" (click)="increaseAdults()">+</button>
+            <input [(ngModel)]="adults" name="adults" id="adults" type="number">
+            <button type="button" (click)="decreaseAdults()">-</button>
         </div>
         <div class="input-number">
             <label for="childs">Crianças:</label>
-            <button type="button">+</button>
-            <input id="childs" type="number">
-            <button type="button">-</button>
+            <button type="button" (click)="increaseChilds()">+</button>
+            <input [(ngModel)]="childs" name="childs" id="childs" type="number">
+            <button type="button" (click)="decreaseChilds()">-</button>
         </div>
         <div class="input-radio">
             <input id="economic-class" type="radio">
             <label for="economic-class">Econômica</label>
         </div>
         <div class="input-radio">
-            <input id="executive-class" type="radio">
-            <label for="executive-class">Executiva</label>
+            <input name="planeClass" id="executive-class" type="radio">
+            <label name="planeClass" for="executive-class">Executiva</label>
         </div>
         <div class="input-range">
             <label for="miles" class="form-label">Utilizar 0 milhas: </label>

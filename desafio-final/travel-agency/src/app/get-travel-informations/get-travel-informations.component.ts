@@ -16,6 +16,9 @@ export class GetTravelInformationsComponent implements OnInit {
   originCountry: string = "";
   destinyCountry: string = "";
 
+  adults: number = 0;
+  childs: number = 0;
+
   constructor(private countriesService: CountriesService) { }
 
   ngOnInit(): void {
@@ -31,7 +34,6 @@ export class GetTravelInformationsComponent implements OnInit {
 
   onChangeDestinyCountry(newDestinyCountry: string): void {
     this.destinyCountry = newDestinyCountry;
-    console.log(this.destinyCountry);
     this.getDestinyCountryCities();
   }
 
@@ -72,6 +74,30 @@ export class GetTravelInformationsComponent implements OnInit {
         this.destinyCountryCities = country.cities;
       }
     }
+  }
+
+  increaseAdults(): number {
+    return this.adults++;
+  }
+
+  decreaseAdults(): void {
+
+    if (this.adults > 1) {
+      this.adults--;
+    }
+
+  }
+
+  increaseChilds(): number {
+    return this.childs++;
+  }
+
+  decreaseChilds(): void {
+
+    if (this.childs > 0) {
+      this.childs--;
+    }
+
   }
 
 }
