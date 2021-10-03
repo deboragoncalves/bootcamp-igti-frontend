@@ -3,15 +3,13 @@
         <div class="input-select">
             <p>País de origem:</p>
             <select class="form-select">
-                <option selected>Brasil</option>
-                <option value="Estados Unidos">Estados Unidos</option>
+                <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
         </div>
         <div class="input-select">
             <p>País de destino:</p>
             <select class="form-select">
-                <option selected>Brasil</option>
-                <option value="Estados Unidos">Estados Unidos</option>
+                <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
         </div>
         <div class="input-select">

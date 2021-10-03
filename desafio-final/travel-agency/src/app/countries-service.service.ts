@@ -11,7 +11,7 @@ export class CountriesService {
   constructor(private httpClient: HttpClient) { }
 
   getCountriesInformation() {
-    return this.httpClient.get<Array<Object>>(this.baseUrl + "countries");
+    return this.httpClient.get<Array<any>>(this.baseUrl + "countries");
   }
 
 }
