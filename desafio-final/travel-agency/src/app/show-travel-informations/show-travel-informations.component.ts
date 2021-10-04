@@ -12,6 +12,7 @@ export class ShowTravelInformationsComponent implements OnInit {
   // TODO: Usar outra API exceto DistanceMatrix e criar service
 
   ngOnInit(): void {
+    console.log(localStorage.getItem("travelInformations"));
     this.getDistanceCitiesKm();
   }
 

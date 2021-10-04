@@ -25,9 +25,13 @@ export class GetTravelInformationsComponent implements OnInit {
 
   miles: number = 0;
 
+  travelInformations: Object = {};
+
   constructor(private router: Router, private countriesService: CountriesService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.travelInformations = {};
+    
     this.countriesService.getCountriesInformation().subscribe(countries => {
       this.countries = countries;
     });
@@ -51,16 +55,27 @@ export class GetTravelInformationsComponent implements OnInit {
   onChangeOriginCountry(newOriginCountry: string): void {
     this.travelForm.get("originCountry")?.setValue(newOriginCountry);
     this.getOriginCountryCities();
+
+    this.travelInformations = {... this.travelInformations, 
+    originContry: this.travelForm.get("originCountry")?.value};
+    
   }
 
   onChangeDestinyCountry(newDestinyCountry: string): void {
     this.travelForm.get("destinyCountry")?.setValue(newDestinyCountry);
     this.getDestinyCountryCities();
+
+    this.travelInformations = {... this.travelInformations, 
+    destinyCountry: this.travelForm.get("destinyCountry")?.value};
+
   }
 
   onChangeMiles(newMiles: number): void {
     if (this.travelForm.get("miles")?.value) {
       this.miles = newMiles;
+
+      this.travelInformations = {... this.travelInformations, 
+      miles: this.travelForm.get("miles")?.value};
     }
   }
 
@@ -176,6 +191,18 @@ export class GetTravelInformationsComponent implements OnInit {
     }
 
     if (this.travelForm.valid) {
+      this.travelInformations = {... this.travelInformations, 
+      originCity: this.travelForm.get("originCity")?.value,  
+      destinyCity: this.travelForm.get("destinyCity")?.value,  
+      economicClass: this.travelForm.get("economicClass")?.value,
+      executiveClass: this.travelForm.get("executiveClass")?.value,
+      adults: this.travelForm.get("adults")?.value,
+      childs: this.travelForm.get("childs")?.value,
+    };
+
+      console.log(this.travelInformations);
+
+      localStorage.setItem("travelInformations", JSON.stringify(this.travelInformations));
       this.router.navigateByUrl('/info');
     }
 
