@@ -13,10 +13,10 @@ export class ShowTravelInformationsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.travelInformations != "{}") {
+    if (this.travelInformations != "{}" && this.travelInformations != null) {
       this.travelInformations = JSON.parse(this.travelInformations);
       
-      if (this.travelInformations.executiveClass) {
+      if (this.travelInformations.executiveClass != "") {
         this.planeClass = "Classe executiva";
       } else {
         this.planeClass = "Classe econômica";
@@ -49,6 +49,9 @@ export class ShowTravelInformationsComponent implements OnInit {
 
     let distanceCitiesKM = radiusEarthKm * c;
     return distanceCitiesKM;
+
+    // TODO: Pegar infos latitude e longitude
+    // TODO: Calcular preços
   }
 
 }

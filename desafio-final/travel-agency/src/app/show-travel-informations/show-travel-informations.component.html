@@ -1,4 +1,4 @@
-<div class="main" *ngIf="travelInformations != '{}'">
+<div class="main" *ngIf="travelInformations != '{}' && travelInformations != null">
     <p>País de origem: {{ travelInformations.originCountry }}</p>
     <p>Cidade de origem: {{ travelInformations.originCity }}</p>
     <p>País de destino: {{ travelInformations.destinyCountry }}</p>
@@ -15,3 +15,6 @@
     <p>Milhas utilizadas: {{ travelInformations.miles }}</p>
     <p>Valor abatido pelas milhas: R$</p>
 </div>
+
+<p *ngIf="travelInformations == '{}' || travelInformations == null">Preencha as informações da sua viagem</p>
+
