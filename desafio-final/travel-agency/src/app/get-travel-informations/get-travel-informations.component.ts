@@ -18,7 +18,7 @@ export class GetTravelInformationsComponent implements OnInit {
   originCountryCities: Array<any> = new Array();
   destinyCountryCities: Array<any> = new Array();
 
-  invalidCountry: boolean = false;
+  invalidCity: boolean = false;
   invalidAdults: boolean = false;
   invalidChilds: boolean = false;
   invalidClass: boolean = false;
@@ -31,7 +31,8 @@ export class GetTravelInformationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.travelInformations = {};
-    
+    localStorage.setItem("travelInformations", JSON.stringify(this.travelInformations));
+
     this.countriesService.getCountriesInformation().subscribe(countries => {
       this.countries = countries;
     });
@@ -55,27 +56,16 @@ export class GetTravelInformationsComponent implements OnInit {
   onChangeOriginCountry(newOriginCountry: string): void {
     this.travelForm.get("originCountry")?.setValue(newOriginCountry);
     this.getOriginCountryCities();
-
-    this.travelInformations = {... this.travelInformations, 
-    originContry: this.travelForm.get("originCountry")?.value};
-    
   }
 
   onChangeDestinyCountry(newDestinyCountry: string): void {
     this.travelForm.get("destinyCountry")?.setValue(newDestinyCountry);
     this.getDestinyCountryCities();
-
-    this.travelInformations = {... this.travelInformations, 
-    destinyCountry: this.travelForm.get("destinyCountry")?.value};
-
   }
 
   onChangeMiles(newMiles: number): void {
     if (this.travelForm.get("miles")?.value) {
       this.miles = newMiles;
-
-      this.travelInformations = {... this.travelInformations, 
-      miles: this.travelForm.get("miles")?.value};
     }
   }
 
@@ -98,6 +88,7 @@ export class GetTravelInformationsComponent implements OnInit {
       for (let country of this.countries) {
         if (country.country == "Japão" && this.travelForm.get("originCountry")?.value == "Japão") {
           this.originCountryCities = country.cities;
+          console.log(this.originCountryCities)
           break;
         } else if (country.country == "Brasil" && this.travelForm.get("originCountry")?.value == "Brasil") {
           this.originCountryCities = country.cities;
@@ -170,8 +161,8 @@ export class GetTravelInformationsComponent implements OnInit {
   }
 
   validatedForm(): void {
-    if (this.travelForm.get("originCountry")?.value == this.travelForm.get("destinyCountry")?.value) {
-      this.invalidCountry = true;
+    if (this.travelForm.get("originCity")?.value == this.travelForm.get("destinyCity")?.value) {
+      this.invalidCity = true;
       return;
     }
 
@@ -191,16 +182,18 @@ export class GetTravelInformationsComponent implements OnInit {
     }
 
     if (this.travelForm.valid) {
-      this.travelInformations = {... this.travelInformations, 
-      originCity: this.travelForm.get("originCity")?.value,  
-      destinyCity: this.travelForm.get("destinyCity")?.value,  
-      economicClass: this.travelForm.get("economicClass")?.value,
-      executiveClass: this.travelForm.get("executiveClass")?.value,
-      adults: this.travelForm.get("adults")?.value,
-      childs: this.travelForm.get("childs")?.value,
-    };
-
-      console.log(this.travelInformations);
+      this.travelInformations = {
+        ... this.travelInformations,
+        originCountry: this.travelForm.get("originCountry")?.value,
+        destinyCountry: this.travelForm.get("destinyCountry")?.value,
+        originCity: this.travelForm.get("originCity")?.value,
+        destinyCity: this.travelForm.get("destinyCity")?.value,
+        economicClass: this.travelForm.get("economicClass")?.value,
+        executiveClass: this.travelForm.get("executiveClass")?.value,
+        adults: this.travelForm.get("adults")?.value,
+        childs: this.travelForm.get("childs")?.value,
+        miles: this.travelForm.get("miles")?.value
+      };
 
       localStorage.setItem("travelInformations", JSON.stringify(this.travelInformations));
       this.router.navigateByUrl('/info');

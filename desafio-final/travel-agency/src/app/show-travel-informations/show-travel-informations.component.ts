@@ -7,16 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowTravelInformationsComponent implements OnInit {
 
+  travelInformations: any = localStorage.getItem("travelInformations");
+  planeClass: string = "";
+
   constructor() { }
 
-  // TODO: Usar outra API exceto DistanceMatrix e criar service
-
   ngOnInit(): void {
-    console.log(localStorage.getItem("travelInformations"));
-    this.getDistanceCitiesKm();
+    if (this.travelInformations != "{}") {
+      this.travelInformations = JSON.parse(this.travelInformations);
+      
+      if (this.travelInformations.executiveClass) {
+        this.planeClass = "Classe executiva";
+      } else {
+        this.planeClass = "Classe econômica";
+      }
+
+      this.getDistanceCitiesKm();
+    }
   }
 
   getDistanceCitiesKm(): number {
+    // TODO: Usar outra API exceto DistanceMatrix e criar service
+
     let radiusEarthKm = 6371;
 
     let latitudeOriginCity = 0;

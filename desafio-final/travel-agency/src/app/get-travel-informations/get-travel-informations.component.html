@@ -6,7 +6,6 @@
                 <option selected>Selecione o país de origem</option>
                 <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
-            <p *ngIf="invalidCountry">O país de origem não pode ser igual ao país de destino</p>
         </div>
         <div class="input-select">
             <p>País de destino:</p>
@@ -14,7 +13,6 @@
                 <option selected>Selecione o país de destino</option>
                 <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
-            <p *ngIf="invalidCountry">O país de origem não pode ser igual ao país de destino</p>
         </div>
         <div class="input-select">
             <p>Cidade de origem:</p>
@@ -22,6 +20,7 @@
                 <option selected>Selecione a cidade de origem</option>
                 <option *ngFor="let country of originCountryCities">{{ country.city }}</option>
             </select>
+            <p *ngIf="invalidCity">A cidade de origem não pode ser igual a cidade de destino</p>
         </div>
         <div class="input-select">
             <p>Cidade de destino:</p>
@@ -29,6 +28,7 @@
                 <option selected>Selecione a cidade de destino</option>
                 <option *ngFor="let country of destinyCountryCities">{{ country.city }}</option>
             </select>
+            <p *ngIf="invalidCity">A cidade de origem não pode ser igual a cidade de destino</p>
         </div>
         <div class="input-number">
             <label for="adults">Adultos:</label>
