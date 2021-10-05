@@ -18,6 +18,7 @@ export class ShowTravelInformationsComponent implements OnInit {
 
   hasChilds: boolean = false;
   hasMiles: boolean = false;
+  warningMiles: boolean = false;
 
   priceAdult: number = 0;
   priceChild: number = 0;
@@ -136,6 +137,11 @@ export class ShowTravelInformationsComponent implements OnInit {
 
       this.discountMiles = this.travelInformations.miles * 0.02;
       this.totalPriceDiscount = this.totalPrice - this.discountMiles;
+
+      if (this.discountMiles > this.totalPrice) {
+        this.hasMiles = false;
+        this.warningMiles = true;
+      }
     }
   }
 

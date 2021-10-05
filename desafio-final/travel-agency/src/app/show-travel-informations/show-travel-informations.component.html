@@ -1,21 +1,22 @@
 <div class="main" *ngIf="travelInformations != '{}' && travelInformations != null">
-    <p>País de origem: {{ travelInformations.originCountry }}</p>
-    <p>Cidade de origem: {{ travelInformations.originCity }}</p>
-    <p>País de destino: {{ travelInformations.destinyCountry }}</p>
-    <p>Cidade de destino: {{ travelInformations.destinyCity }}</p>
-    <p>Tipo de vôo: {{ planeClass }}</p>
-    <p>Adultos: {{ travelInformations.adults }}</p>
-    <p *ngIf="hasChilds">Crianças: {{ travelInformations.childs }}</p>
+    <p><span>País de origem:</span> {{ travelInformations.originCountry }}</p>
+    <p><span>Cidade de origem:</span> {{ travelInformations.originCity }}</p>
+    <p><span>País de destino:</span> {{ travelInformations.destinyCountry }}</p>
+    <p><span>Cidade de destino:</span> {{ travelInformations.destinyCity }}</p>
+    <p><span>Tipo de vôo:</span> {{ planeClass }}</p>
+    <p><span>Adultos:</span> {{ travelInformations.adults }}</p>
+    <p *ngIf="hasChilds"><span>Crianças:</span> {{ travelInformations.childs }}</p>
 
-    <p>Distância: {{ distanceCities }} km</p>
-    <p>Valor da passagem por adulto: R$ {{ priceAdult }}</p>
-    <p *ngIf="hasChilds">Valor da passagem por criança: R$ {{ priceChild }}</p>
-    <p>Valor total da passagem: R$ {{ totalPrice }}</p>
+    <p><span>Distância:</span> {{ distanceCities }} km</p>
+    <p><span>Valor da passagem por adulto:</span> R$ {{ priceAdult }}</p>
+    <p *ngIf="hasChilds"><span>Valor da passagem por criança:</span> R$ {{ priceChild }}</p>
+    <p><span>Valor total da passagem:</span> R$ {{ totalPrice }}</p>
 
-    <p *ngIf="hasMiles">Milhas utilizadas: {{ travelInformations.miles }}</p>
-    <p *ngIf="hasMiles">Valor abatido pelas milhas: R$ {{ discountMiles }}</p>
-    <p *ngIf="hasMiles">Valor total da passagem após desconto: R$ {{ totalPriceDiscount }}</p>
+    <p *ngIf="hasMiles"><span>Milhas utilizadas:</span> {{ travelInformations.miles }}</p>
+    <p *ngIf="hasMiles"><span>Valor abatido pelas milhas:</span> R$ {{ discountMiles }}</p>
+    <p *ngIf="hasMiles"><span>Valor total da passagem após desconto:</span> R$ {{ totalPriceDiscount }}</p>
+    <p class="alert alert-secondary alert-warning" role="alert" *ngIf="warningMiles">O valor das milhas (R$ {{ discountMiles }}) não pode ser maior que o valor da passagem (R$ {{ totalPrice }}). Por isso, o desconto das milhas será desconsiderado.</p>
 </div>
 
-<p *ngIf="travelInformations == '{}' || travelInformations == null">Preencha as informações da sua viagem</p>
+<p class="alert alert-secondary alert-warning" role="alert" *ngIf="travelInformations == '{}' || travelInformations == null">Preencha as informações da sua viagem</p>
 

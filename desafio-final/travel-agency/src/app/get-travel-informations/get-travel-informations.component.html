@@ -9,7 +9,8 @@
         </div>
         <div class="input-select">
             <p>País de destino:</p>
-            <select class="form-select" formControlName="destinyCountry" (ngModelChange)="onChangeDestinyCountry($event)">
+            <select class="form-select" formControlName="destinyCountry"
+                (ngModelChange)="onChangeDestinyCountry($event)">
                 <option selected>Selecione o país de destino</option>
                 <option *ngFor="let country of countries">{{ country.country }}</option>
             </select>
@@ -20,7 +21,7 @@
                 <option selected>Selecione a cidade de origem</option>
                 <option *ngFor="let country of originCountryCities">{{ country.city }}</option>
             </select>
-            <p *ngIf="invalidCity">A cidade de origem não pode ser igual a cidade de destino</p>
+            <p class="alert alert-secondary alert-warning" role="alert" *ngIf="invalidCity">A cidade de origem não pode ser igual a cidade de destino</p>
         </div>
         <div class="input-select">
             <p>Cidade de destino:</p>
@@ -28,35 +29,54 @@
                 <option selected>Selecione a cidade de destino</option>
                 <option *ngFor="let country of destinyCountryCities">{{ country.city }}</option>
             </select>
-            <p *ngIf="invalidCity">A cidade de origem não pode ser igual a cidade de destino</p>
+            <p class="alert alert-secondary alert-warning" role="alert" *ngIf="invalidCity">A cidade de origem não pode ser igual a cidade de destino</p>
         </div>
         <div class="input-number">
             <label for="adults">Adultos:</label>
-            <button type="button" (click)="increaseAdults()">+</button>
+            <svg (click)="increaseAdults()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle"
+            viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>
             <input formControlName="adults" id="adults" type="number">
-            <button type="button" (click)="decreaseAdults()">-</button>
-            <p *ngIf="invalidAdults">O número de adultos não pode ser menor que 1</p>
+            <svg (click)="decreaseAdults()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+            </svg>
+            <p class="alert alert-secondary alert-warning" role="alert" *ngIf="invalidAdults">O número de adultos não pode ser menor que 1</p>
         </div>
         <div class="input-number">
             <label for="childs">Crianças:</label>
-            <button type="button" (click)="increaseChilds()">+</button>
+            <svg (click)="increaseChilds()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle"
+            viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg>
             <input formControlName="childs" id="childs" type="number">
-            <button type="button" (click)="decreaseChilds()">-</button>
-            <p *ngIf="invalidChilds">O número de crianças não pode ser menor que 0</p>
+            <svg (click)="decreaseChilds()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+            </svg>
+            <p class="alert alert-secondary alert-warning" role="alert" *ngIf="invalidChilds">O número de crianças não pode ser menor que 0</p>
         </div>
         <div class="input-radio">
-            <input formControlName="economicClass" value="economicClass" (ngModelChange)="onChangeEconomicClass($event)" id="economic-class" type="radio">
+            <input formControlName="economicClass" value="economicClass" (ngModelChange)="onChangeEconomicClass($event)"
+                id="economic-class" type="radio">
             <label for="economic-class">Econômica</label>
         </div>
         <div class="input-radio">
-            <input formControlName="executiveClass" value="executiveClass" (ngModelChange)="onChangeExecutiveClass($event)" id="executive-class" type="radio">
+            <input formControlName="executiveClass" value="executiveClass"
+                (ngModelChange)="onChangeExecutiveClass($event)" id="executive-class" type="radio">
             <label for="executive-class">Executiva</label>
         </div>
-        <p *ngIf="invalidClass">Selecione uma opção de classe</p>
+        <p class="alert alert-secondary alert-warning" role="alert" *ngIf="invalidClass">Selecione uma opção de classe</p>
         <div class="input-range">
             <label for="miles" class="form-label">Utilizar {{ miles }} milhas: </label>
-            <input type="range" formControlName="miles" (ngModelChange)="onChangeMiles($event)" class="form-range" id="miles">
+            <input type="range" formControlName="miles" (ngModelChange)="onChangeMiles($event)" class="form-range"
+                id="miles">
         </div>
-        <button type="submit">Calcular o preço da viagem</button>
+        <button class="btn btn-outline-primary" type="submit">Calcular o preço da viagem</button>
     </form>
 </div>
