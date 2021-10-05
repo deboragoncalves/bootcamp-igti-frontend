@@ -72,6 +72,7 @@
             <label for="executive-class">Executiva</label>
         </div>
         <p class="alert alert-secondary alert-warning" role="alert" *ngIf="invalidClass">Selecione uma opção de classe</p>
+        <!-- TODO: Permitir mais que 100 milhas -->
         <div class="input-range">
             <label for="miles" class="form-label">Utilizar {{ miles }} milhas: </label>
             <input type="range" formControlName="miles" (ngModelChange)="onChangeMiles($event)" class="form-range"

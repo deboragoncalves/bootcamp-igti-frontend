@@ -146,6 +146,16 @@ export class ShowTravelInformationsComponent implements OnInit {
         this.warningMiles = true;
       }
     }
+
+    this.formatPrices();
+  }
+
+  formatPrices(): void {
+    this.priceAdult = Number(this.priceAdult.toFixed(2));
+    this.priceChild = Number(this.priceChild.toFixed(2));
+    this.discountMiles = Number(this.discountMiles.toFixed(2));
+    this.totalPriceDiscount = Number(this.totalPriceDiscount.toFixed(2));
+    this.totalPrice = Number(this.totalPrice.toFixed(2));
   }
 
 }
