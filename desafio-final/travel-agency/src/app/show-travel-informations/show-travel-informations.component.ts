@@ -101,8 +101,6 @@ export class ShowTravelInformationsComponent implements OnInit {
 
     let distanceCitiesKM = radiusEarthKm * c;
     return Math.round(distanceCitiesKM);
-
-    // TODO: Calcular preços
   }
 
   calculateTravelPrice(): void {
@@ -151,6 +149,8 @@ export class ShowTravelInformationsComponent implements OnInit {
   }
 
   formatPrices(): void {
+    
+    // TODO: Formatar milhares
     this.priceAdult = Number(this.priceAdult.toFixed(2));
     this.priceChild = Number(this.priceChild.toFixed(2));
     this.discountMiles = Number(this.discountMiles.toFixed(2));
