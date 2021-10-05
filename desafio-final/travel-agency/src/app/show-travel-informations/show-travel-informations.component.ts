@@ -60,7 +60,10 @@ export class ShowTravelInformationsComponent implements OnInit {
 
                 if (this.distanceCities != 0) {
                   this.calculateTravelPrice();
+                  return;
                 }
+
+                return;
               }
             }
           }
