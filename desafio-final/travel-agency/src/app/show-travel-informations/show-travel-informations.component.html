@@ -5,15 +5,16 @@
     <p>Cidade de destino: {{ travelInformations.destinyCity }}</p>
     <p>Tipo de vôo: {{ planeClass }}</p>
     <p>Adultos: {{ travelInformations.adults }}</p>
-    <p>Crianças: {{ travelInformations.childs }}</p>
+    <p *ngIf="hasChilds">Crianças: {{ travelInformations.childs }}</p>
 
-    <p>Distância: km</p>
-    <p>Valor da passagem por adulto: R$</p>
-    <p>Valor da passagem por criança: R$</p>
-    <p>Valor total da passagem: R$</p>
+    <p>Distância: {{ distanceCities }} km</p>
+    <p>Valor da passagem por adulto: R$ {{ priceAdult }}</p>
+    <p *ngIf="hasChilds">Valor da passagem por criança: R$ {{ priceChild }}</p>
+    <p>Valor total da passagem: R$ {{ totalPrice }}</p>
 
-    <p>Milhas utilizadas: {{ travelInformations.miles }}</p>
-    <p>Valor abatido pelas milhas: R$</p>
+    <p *ngIf="hasMiles">Milhas utilizadas: {{ travelInformations.miles }}</p>
+    <p *ngIf="hasMiles">Valor abatido pelas milhas: R$ {{ discountMiles }}</p>
+    <p *ngIf="hasMiles">Valor total da passagem após desconto: R$ {{ totalPriceDiscount }}</p>
 </div>
 
 <p *ngIf="travelInformations == '{}' || travelInformations == null">Preencha as informações da sua viagem</p>
