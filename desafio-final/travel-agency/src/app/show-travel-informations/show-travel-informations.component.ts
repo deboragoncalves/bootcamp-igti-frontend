@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CountriesService } from '../countries-service.service';
 
 @Component({
   selector: 'show-travel-informations',
@@ -10,7 +11,12 @@ export class ShowTravelInformationsComponent implements OnInit {
   travelInformations: any = localStorage.getItem("travelInformations");
   planeClass: string = "";
 
-  constructor() { }
+  distanceCities: number = 0;
+
+  latLonOriginCity: Array<String> = new Array();
+  latLonDestinyCity: Array<String> = new Array();
+
+  constructor(private countriesService: CountriesService) { }
 
   ngOnInit(): void {
     if (this.travelInformations != "{}" && this.travelInformations != null) {
@@ -22,20 +28,50 @@ export class ShowTravelInformationsComponent implements OnInit {
         this.planeClass = "Classe econômica";
       }
 
-      this.getDistanceCitiesKm();
+      this.latLonOriginCity = this.getLatitudeLongitudeCity(this.travelInformations.originCountry, this.travelInformations.originCity);
+      this.latLonDestinyCity = this.getLatitudeLongitudeCity(this.travelInformations.destinyCountry, this.travelInformations.destinyCity);
     }
   }
 
-  getDistanceCitiesKm(): number {
-    // TODO: Usar outra API exceto DistanceMatrix e criar service
+  getLatitudeLongitudeCity(country: string, city: string): Array<String> {
+    let arrayLatLon: Array<String> = new Array();
 
+    this.countriesService.getCountriesInformation().subscribe(countries => {
+
+      for (let countryInfo of countries) {
+        if (countryInfo.country == country) {          
+          for (let cityInfo of countryInfo.cities) {
+            if (cityInfo.city == city) {
+              arrayLatLon.push(cityInfo.latitude);
+              arrayLatLon.push(cityInfo.longitude);
+
+              if (this.latLonOriginCity.length > 0 && this.latLonDestinyCity.length > 0) {          
+                this.distanceCities = this.getDistanceCitiesKm(this.latLonOriginCity, this.latLonDestinyCity);
+                console.log(this.distanceCities);
+              }
+            }
+          }
+        }
+      }
+
+    }, error => {
+      console.log(error);
+    });
+    
+    return arrayLatLon;
+  }
+
+  getDistanceCitiesKm(latLonOriginCity: Array<String>, latLonDestinyCity: Array<String>): number {
+    
+    // TODO: Usar outra API exceto DistanceMatrix e criar service
+    
     let radiusEarthKm = 6371;
 
-    let latitudeOriginCity = 0;
-    let latitudeDestinyCity = 0;
+    let latitudeOriginCity: number = Number(latLonOriginCity[0]);
+    let longitudeOriginCity: number = Number(latLonOriginCity[1]);
 
-    let longitudeOriginCity = 0;
-    let longitudeDestinyCity = 0;
+    let latitudeDestinyCity: number = Number(latLonDestinyCity[0]);
+    let longitudeDestinyCity: number = Number(latLonDestinyCity[1]);
 
     let differenceLatitude = (latitudeDestinyCity - latitudeOriginCity) * (Math.PI / 180);  // radianos
     let differenceLongitude = (longitudeDestinyCity - longitudeOriginCity) * (Math.PI / 180);  // radianos
@@ -48,7 +84,7 @@ export class ShowTravelInformationsComponent implements OnInit {
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 
     let distanceCitiesKM = radiusEarthKm * c;
-    return distanceCitiesKM;
+    return Math.round(distanceCitiesKM);
 
     // TODO: Pegar infos latitude e longitude
     // TODO: Calcular preços
