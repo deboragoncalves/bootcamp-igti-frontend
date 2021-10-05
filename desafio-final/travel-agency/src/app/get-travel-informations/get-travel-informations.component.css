@@ -8,6 +8,10 @@
     margin: 10px 0;
 }
 
+.input-select p, label {
+    font-weight: bold;
+}
+
 .input-number, .input-radio {
     margin: 20px 0;
 }
